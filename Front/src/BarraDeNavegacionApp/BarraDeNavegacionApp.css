@@ -1,0 +1,30 @@
+/* Formato barra de navegación */
+
+.barraNavegacion {
+    background-color: rgb(255, 255, 255);
+    min-height: 170px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.formatoLogoBarra {
+    max-width: 180px;
+    max-height: 200px;
+    margin-right: 5px;
+}
+
+.formatoTituloMenu {
+    margin-left: 10px;
+}
+
+.formatoMenu {
+    font-family: 'Gill Sans MT', sans-serif;
+    font-weight: bold;
+    column-gap: 5px;
+}
+
+li > a:hover {
+    text-decoration: underline;
+}
+

@@ -4,22 +4,37 @@ import './App.css'
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-import { Login } from './Login/Login';
+import { PaginaInicio } from './PaginaInicio/PaginaInicio';
 import { PaginaPrincipal } from './PaginaPrincipal/PaginaPrincipal';
 import { PieDePagina } from './PieDePagina/PieDePagina';
+import { BarraDeNavegacionApp } from './BarraDeNavegacionApp/BarraDeNavegacionApp';
+
+import { Login } from './login/Login';
+
 
 function App() {
+
+  const [banderaBarra, setBanderaBarra] = useState(true);
+  const [banderaPie, setBanderaPie] = useState(true);
   
   return (
     <>
+      <BarraDeNavegacionApp 
+        banderaBarra = {banderaBarra} />
+
       <Routes>
-        <Route path='/' element={<Login
-          nombreEmpresa='nombreEmpresa.png' />} />
+        <Route path='/' element={<PaginaInicio
+          funcion = {setBanderaBarra} />} />
+
+        <Route path='/Login' element={<Login
+          funcion = {setBanderaBarra}
+          funcion1 = {setBanderaPie} />} />
 
         <Route path='/paginaPrincipal' element={<PaginaPrincipal />} />
       </Routes>
 
-      <PieDePagina />
+      <PieDePagina
+        banderaPie = {banderaPie} />
     </>
   )
 }

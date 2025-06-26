@@ -1,13 +1,18 @@
 import './PieDePagina.css';
 
-export const PieDePagina = () => {
+export const PieDePagina = ( { banderaPie }) => {
   return (
-    <footer className = "container-fluid">
+    banderaPie ? <footer className = "container-fluid">
       <div className = "row pieDePagina">
-        <p className = "col-12 col-md-5">Todos los derechos reservados</p>
-        <p className = "col-12 col-md-4">Sabaneta, Antioquia, 2025</p>
-        <p className = "col-12 col-md-3">A&D Soft</p>
+        <p className = "col-12 col-md-6">Todos los derechos reservados<br />
+                                          Sabaneta, Antioquia, 2025 <br />
+                                          A&D Soft</p>
+
+        <p className = "col-12 col-md-6">Calle 50 No. 80 - 12. <br />
+                                         Medellín, Antioquia, Colombia. <br />
+                                         Sede principal: 3001234567</p>
+        
       </div>   
-    </footer>
+    </footer> : null
   )
 }

@@ -1,0 +1,174 @@
+/* Formato para la página principal. */
+
+/* Formato para el logo de la fundación belcorp */
+#logoFundacion {
+    min-width: 190px;
+    min-height: 110px;
+}
+  
+/* Controlar el tamaño del logo y evitar traslapes */
+@media screen and (max-width:1200px) {
+    #logoFundacion {
+        max-width: 190px;
+        max-height: 110px;
+    }
+}
+
+/* Formato lema fundación */
+.formatoPresentacionFundacion {
+    background-color: #c4d4f5;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.formatoPresentacionFundacion h1 {
+    font: italic bold 30px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #5379c5;
+}
+
+/* Formato para la información de la fundación */
+.formatoInfoFundacion {
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 25px;
+}
+
+/* Cambiamos la orientación de la informaión para evitar traslapes */
+@media screen and (max-width:754px) {
+    .formatoInfoFundacion {
+        padding: 5px 5px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5px;
+    }
+}
+
+.formatoInfoFundacion h3 {
+    font: italic bold 17px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#5379c5;
+    margin-top: 8px;
+}
+
+.formatoInfoFundacion p {
+    text-align: left;
+    line-height: 1.3em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000;
+}
+
+/* Formato accesos directos y catálogos */
+.formatoAccesosYproductos {
+    padding: 10px;
+}
+
+.formatoAccesosYproductos h3 {
+    font: italic bold 20px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #5379c5;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#accesosDirectos ul {
+    list-style-type: none;
+    font-family: 'Gill Sans MT', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    column-gap: 5px;
+}
+
+#accesosDirectos ul li {
+    min-height: 38px;
+    padding-top: 5px;
+}
+
+#accesosDirectos ul li a {
+    text-decoration: none;
+    color: rgb(80, 75, 75);
+}
+
+/* Generar el efecto del subrayado */
+#accesosDirectos ul li a:hover {
+    text-decoration: underline;
+}
+
+.formatoFondoCatalogos {
+    border-radius: 5px;
+    background-color: rgb(245, 245, 245);
+
+    display: block;
+    flex-direction: column;
+    align-items: center;
+}
+
+.distribucionCatalogos {
+    display: flex;
+    justify-content: center;
+    column-gap: 120px;
+}
+
+.formatoCatalogos {
+    max-height: 225px;
+    max-width: 225px;
+}
+
+/* Cambiamos la orientación de los catálogos */
+@media screen and (max-width:1024px) {
+    
+    .distribucionCatalogos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5px;
+        padding-bottom: 5px;
+    }
+
+    .formatoCatalogos {
+        max-height: 112px;
+        max-width: 112px;
+    }
+
+}
+
+/* Formato familia bel star */
+.formatoFotoColaborador {
+    width: 150px;
+    height: 200px;
+}
+
+/* Formato para el título mas las fotos */
+.formatoFamilia {
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin: 2px 1px;
+}
+
+.formatoFamilia h3 {
+    font: italic bold 20px 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #5379c5;
+    text-align: center;
+}
+
+.formatoFamilia p {
+    text-align: left;
+    line-height: 1.3em;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:#000;
+    margin-top: 4px;
+}
+
+@media screen and (max-width:1300px) {
+    .formatoFamilia p {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+

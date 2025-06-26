@@ -1,0 +1,88 @@
+/* Formato barra de navegación */
+
+.barraNavegacion {
+    background-color: rgb(255, 255, 255);
+    min-height: 200px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.formatoLogoBarra {
+    max-width: 180px;
+    max-height: 200px;
+    margin-right: 5px;
+}
+
+.formatoTituloMenu {
+    margin-left: 25px;
+}
+
+.formatoMenu {
+    font-family: 'Gill Sans MT', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    column-gap: 5px;
+}
+
+li > a:hover {
+    text-decoration: underline;
+}
+
+.iniciarSesion {
+    font-family: 'Gill Sans MT', sans-serif;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #000;
+    margin-right: 30px;
+}
+
+.iniciarSesion:hover {
+    background-color: #C4D4F5;
+    color: #fff;
+    border: 1px solid #C4D4F5;
+}
+
+i {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 15px;
+}
+
+ /* Format carrusel */
+.carrusel{
+    background-color: #FFF;
+    margin-top: 3px;
+    border-radius: 5px;
+    color: #000;
+}
+
+.formatoLogoCarrusel {
+    font-size: 250px;
+    font-weight: bold;
+    color: #C4D4F5;
+    margin-left: 150px; 
+}
+
+.formatoTextoCarrusel {
+
+    font-family: 'Gill Sans';
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 40px;
+    margin-left: 70px;
+}
+
+/* Formato productos */
+.formatoProductos {
+    padding: 10px;
+}
+
+.textoPara {
+    margin-top: 50%;
+}
+
+
+
+ 
