@@ -4,6 +4,8 @@
 const express = require('express');
 const cors = require('cors');
 
+const rutaLogin = require('../rutas/RutaLogin.js');
+
 // Instanciamos el servidor.
 const app = express();
 
@@ -11,6 +13,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded( { extended: true}));
 app.use(cors());
+
+// Creamos los endpoint.
+app.use('/login', rutaLogin);
 
 // Exportamos la app.
 module.exports = app;

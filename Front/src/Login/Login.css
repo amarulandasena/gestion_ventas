@@ -41,6 +41,12 @@
     border-bottom: 1px solid #000;
 }
 
+.formatoBotones {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
 .formatoBoton {
     background-color: #C4D4F5;
     border: 1px solid #C4D4F5;
@@ -56,5 +62,9 @@
 .formatoBoton:hover {
     background-color: #2252b3;
     cursor: pointer;
+}
+
+.formatoCancelar {
+    background-color: #5379c5;
 }
 
