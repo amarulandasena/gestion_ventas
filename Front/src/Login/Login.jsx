@@ -19,54 +19,54 @@ export const Login = ( {funcion, funcion1}) => {
     return() => funcion1(true);
   },[funcion1]);
 
+  // Variables para redireccionar la navegación.
+  const navegarPrincipal = useNavigate();
+  const navegarInicio = useNavigate();
+
   // Hooks para validar el Login.
   const[numeroIdentificacion, setNumeroIdentificacion] = useState('');
   const[contrasegna, setContrasegna] = useState('');
 
-  // Variables para redireccionar la navegación.
-  const navegarInicio = useNavigate();
-  const navegarPrincipal = useNavigate();
-
   // Función para cancelar el ingreso.
   const cancelar = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    navegarInicio('/');
-  }
+  navegarInicio('/');
+}
 
-  // Función para ingresar al sistema.
+  // Función para ingresar a la aplicación.
   const ingresar = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Validamos que se hayan ingresado todos los datos.
-    if(!numeroIdentificacion || !contrasegna) {
-      alert('Ingrese su usuario y/o contraseña');
-      return;
-      }
-
-    // Definimos el objeto para el envio de los datos.
-    let datosUsuario = {
-      'numIdentificacion' : numeroIdentificacion,
-      'contrasegna' : contrasegna
+  // Validamos que se hayan ingresado todos los datos.
+  if(!numeroIdentificacion || !contrasegna) {
+    alert('Ingrese su usuario y/o contraseña');
+    return;
     }
 
-    await fetch ('http://localhost:3001/login', {
-      method: 'POST',
-      headers : {
-        'Content-type' : 'application/json',
-      },
-      body : JSON.stringify(datosUsuario),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.noEncontrado) {
-        alert('Usuario no registrado')
-      } else {
-        alert('Bienvenido.')
-        navegarPrincipal('/paginaPrincipal');
-      }
-    })
+  // Definimos el objeto para el envio de los datos.
+  let datosUsuario = {
+    'numIdentificacion' : numeroIdentificacion,
+    'contrasegna' : contrasegna
   }
+
+  await fetch ('http://localhost:3001/login', {
+    method: 'POST',
+    headers : {
+      'Content-type' : 'application/json',
+    },
+    body : JSON.stringify(datosUsuario),
+  })
+  .then((response) => response.json())
+  .then((data) => {
+    if (data.noEncontrado) {
+      alert('Usuario no registrado')
+    } else {
+      alert('Bienvenido.')
+      navegarPrincipal('/paginaPrincipal');
+    }
+  })
+}
 
   return (
     <section className = "container formatoLogin">
@@ -87,12 +87,9 @@ export const Login = ( {funcion, funcion1}) => {
             <div className="mb-3 formatoBotones">
               <button type="submit" className="btn btn-primary formatoBoton formatoCancelar" onClick={cancelar}>Cancelar</button>
               <button type="submit" className="btn btn-primary formatoBoton" onClick={ingresar}>Ingresar</button>
-            </div>
-
-            
+            </div>  
          </form>
       </div>
-
     </section>
   )
 }
