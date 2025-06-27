@@ -1,0 +1,55 @@
+// Controladores para el CRUD  de clientes.
+
+const mysql2 = require('mysql2');
+const database = require('../config/database.js');
+
+const crearCliente = (req, res) => {
+  const { nit, razonSocial, ciudad, direccion, numTelefonico, email, administrador, telAdministrador, emailAdministrador, sector, 
+          actividad, tamagno, numEmpleados, producto, periodoPago } = req.body;
+
+  const crearConsulta = `INSERT INTO cliente(nit, razonSocial, ciudad, direccion, numTelefonico, email, administrador, telAdministrador, 
+                         emailAdministrador, sector, actividad, tamagno, numEmpleados, producto, periodoPago)
+                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
+
+  const consulta = mysql2.format(crearConsulta, [nit, razonSocial, ciudad, direccion, numTelefonico, email, 
+                  administrador, telAdministrador, emailAdministrador, sector, actividad, tamagno, numEmpleados, producto, periodoPago]);
+
+  try {
+    database.query(consulta, (err, result) => {
+
+      if (err) {
+        res.status(400).json({ message : 'Cliente ya existe' });
+      } else {
+        res.status(201).json({ message : 'Cliente creado correctamente.' });
+      } 
+    })
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+}
+
+const leerCliente = (req, res) => {
+  const { nit } = req.params;
+
+  const crearConsulta = `SELECT * FROM cliente WHERE nit = ?;`;
+
+  const consulta = mysql2.format(crearConsulta, [nit]);
+
+  try {
+    database.query(consulta, (err, result) => {
+      
+      if (err) {
+        res.status(400).json({message : 'Cliente no registrado.'})
+      } else {
+        res.status(200).json(result[0]);
+      }
+    })
+  } catch (err){
+    res.status(500).send(err.message);
+  }
+}
+
+module.exports = {
+  crearCliente,
+  leerCliente
+}
