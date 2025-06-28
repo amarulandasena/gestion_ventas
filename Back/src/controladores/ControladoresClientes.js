@@ -39,7 +39,7 @@ const leerCliente = (req, res) => {
     database.query(consulta, (err, result) => {
       
       if (err) {
-        res.status(400).json({message : 'Cliente no registrado.'})
+        res.status(400).send(err);
       } else {
         res.status(200).json(result[0]);
       }

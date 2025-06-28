@@ -10,6 +10,7 @@ import { PieDePagina } from './PieDePagina/PieDePagina';
 import { BarraDeNavegacionApp } from './BarraDeNavegacionApp/BarraDeNavegacionApp';
 
 import { Login } from './login/Login';
+import { ValidarCliente } from './Cliente/ValidarCliente/ValidarCliente';
 
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
           funcion1 = {setBanderaPie} />} />
 
         <Route path='/paginaPrincipal' element={<PaginaPrincipal />} />
+
+        <Route path='/crearCliente' element={<ValidarCliente />} />
       </Routes>
 
       <PieDePagina

@@ -6,26 +6,26 @@ import { Link } from 'react-router-dom';
 
 import nombreEmpresa from '../Imagenes/logo_belcorp.png';
 
-export const BarraDeNavegacionApp = ( { banderaBarra}) => {
+export const BarraDeNavegacionApp = ( { banderaBarra }) => {
 
   return (
     banderaBarra ? <div className="container-fluid">
 
       <nav className="navbar navbar-expand-xl barraNavegacion">
-        <div class="container-fluid">
+        <div className="container-fluid">
           <img src={nombreEmpresa} alt="logo-empresa" className="formatoLogoBarra" />
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 formatoMenu">
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle formatoTituloMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Clientes
                 </a>
                 <ul className="dropdown-menu">
-                  <li><Link to="/" className="dropdown-item formatoMenu">Crear cliente</Link></li>
+                  <li><Link to="/crearCliente" className="dropdown-item formatoMenu">Crear cliente</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Modificar cliente</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Consultar cliente</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Eliminar cliente</Link></li>
@@ -37,7 +37,7 @@ export const BarraDeNavegacionApp = ( { banderaBarra}) => {
             </ul>
           </div>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 formatoMenu">
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle formatoTituloMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,7 +53,7 @@ export const BarraDeNavegacionApp = ( { banderaBarra}) => {
             </ul>
           </div>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 formatoMenu">
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle formatoTituloMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,7 +69,7 @@ export const BarraDeNavegacionApp = ( { banderaBarra}) => {
             </ul>
           </div>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 formatoMenu">
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle formatoTituloMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -84,7 +84,7 @@ export const BarraDeNavegacionApp = ( { banderaBarra}) => {
             </ul>
           </div>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 formatoMenu">
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle formatoTituloMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -102,7 +102,7 @@ export const BarraDeNavegacionApp = ( { banderaBarra}) => {
             </ul>
           </div>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 formatoMenu">
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle formatoTituloMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -118,7 +118,7 @@ export const BarraDeNavegacionApp = ( { banderaBarra}) => {
             </ul>
           </div>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 formatoMenu">
               <li className="nav-item dropdown">
                 <Link to="/paginaPrincipal" className="nav-link active" aria-current="page">Inicio</Link>
@@ -126,7 +126,7 @@ export const BarraDeNavegacionApp = ( { banderaBarra}) => {
             </ul>
           </div>
           
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 formatoMenu">
               <li className="nav-item dropdown">
                 <Link to="/" className="nav-link active formatoMenu" aria-current="page">Cerrar Sesión</Link>

@@ -1,0 +1,23 @@
+.formatoValidar {
+    background-color: #FFF;
+    min-height: 70px;
+    margin: 3px 1px;
+    border-radius: 5px;
+}
+
+.formatoValidarInput {
+    font-family: Garamond;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    margin: 10px;
+    
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.formatoValidar input {
+    margin-bottom: 6px;
+    border: none;
+    background-color: #C4D4F5;
+}

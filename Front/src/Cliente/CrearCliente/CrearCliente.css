@@ -1,0 +1,44 @@
+.formatoCrearCliente {
+    background-color: #fff;
+    border-radius: 5px;
+    padding-bottom: 30px;
+}
+
+.formatoCrearCliente input {
+    margin-bottom: 6px;
+    border: none;
+    background-color: #C4D4F5;
+
+    font-family: Garamond;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.formatoCrearCliente select {
+    margin-bottom: 6px;
+    border: none;
+    background-color: #C4D4F5;
+}
+
+.formatoContenedorBoton { 
+    display: flex;
+    justify-content: center;
+}
+
+.formatoBoton {
+    background-color: #C4D4F5;
+    border: 1px solid #C4D4F5;
+    min-height: 20px;
+    min-width: 70px;
+
+    font-family: Garamond;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.formatoBoton:hover {
+    background-color: #2252b3;
+    cursor: pointer;
+}
