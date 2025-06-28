@@ -11,7 +11,7 @@ import { BarraDeNavegacionApp } from './BarraDeNavegacionApp/BarraDeNavegacionAp
 
 import { Login } from './login/Login';
 import { ValidarCliente } from './Cliente/ValidarCliente/ValidarCliente';
-
+import { ActualizarCliente } from './Cliente/ActualizarCliente/ActualizarCliente';
 
 function App() {
 
@@ -34,6 +34,8 @@ function App() {
         <Route path='/paginaPrincipal' element={<PaginaPrincipal />} />
 
         <Route path='/crearCliente' element={<ValidarCliente />} />
+
+        <Route path='actualizarCliente' element={<ActualizarCliente />} />
       </Routes>
 
       <PieDePagina

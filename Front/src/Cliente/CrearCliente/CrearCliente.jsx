@@ -159,8 +159,10 @@ export const CrearCliente = () => {
             <label htmlFor = "producto" className = "form-label">Producto:</label>
             <select className ="form-select" id="producto" onChange = {(e) => setCategoria(e.target.value)} required>
               <option selected disabled value="">Seleccione la categoría:</option>
-              <option>Gestión ventas</option>
-              <option>Gestión personal</option>
+              <option>Categoría uno</option>
+              <option>Categoría dos</option>
+              <option>Categoría tres</option>
+              <option>Categoría cuatro</option>
             </select>
           </div>
 
