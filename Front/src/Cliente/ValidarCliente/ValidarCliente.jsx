@@ -41,22 +41,21 @@ export const ValidarCliente = () => {
 
   return (
     <section className='container-fluid '>
-      <article className='row formatoValidar'>
+      <article className="row formatoValidar" >
         <form className="col-4 col-md-4 formatoValidarInput">
-          <div className ="col-4 col-md-4">
+          <div className ="col-6 col-md-6">
             <label htmlFor="nit" className="form-label">Nit:</label>
             <input type="text" className="form-control" id="nit" onChange = {(e) => setNit(e.target.value)} required />
           </div>
 
-          <div className="col-2 col-md-2">
+          <div className="col-6 col-md-6 formatoBotonValidar">
             <button className="btn btn-primary formatoBoton" type="submit" onClick = {validar}>Validar</button>
           </div>
-          
+        
         </form>
       </article>
-
-      < CrearCliente 
-        nit = {nit} />
+      
+      < CrearCliente  />
     </section>
   )
 }

@@ -4,9 +4,10 @@ import { useState } from 'react';
 
 import './CrearCliente.css';
 
-export const CrearCliente = ({ nit }) => {
+export const CrearCliente = () => {
 
   // Hooks para capturar los datos.
+  const[nit, setNit] = useState('');
   const[razonSocial, setRazonSocial] = useState('');
   const[ciudad, setCiudad] = useState('');
   const[direccion, setDireccion] = useState('');
@@ -30,7 +31,7 @@ export const CrearCliente = ({ nit }) => {
     e.preventDefault();
 
     // Validamos que se ingresaron todos los datos.
-    if (!razonSocial || !ciudad || !direccion || !numeroTelefonico || !email || !administrador || !numeroAdministrador || !emailAdministrador 
+    if (!nit || !razonSocial || !ciudad || !direccion || !numeroTelefonico || !email || !administrador || !numeroAdministrador || !emailAdministrador 
       ||!sector ||!actividad ||!tamagno || !numEmpleados || !categoria || !periodoPago) {
         alert('Ingrese todos los datos del cliente a registrar.');
         return;
@@ -76,6 +77,12 @@ export const CrearCliente = ({ nit }) => {
       <article className='row formatoCrearCliente'>
 
         <form className="row g-3 needs-validation">
+
+          <div className ="col-md-4">
+            <label htmlFor="nit" className="form-label">Nit:</label>
+            <input type="text" className="form-control" id="nit" onChange = {(e) => setNit(e.target.value)} required />
+          </div>
+
           <div className ="col-md-4">
             <label htmlFor="razonSocial" className="form-label">Razón social:</label>
             <input type="text" className="form-control" id="razonSocial" onChange = {(e) => setRazonSocial(e.target.value)} required></input>
@@ -152,10 +159,8 @@ export const CrearCliente = ({ nit }) => {
             <label htmlFor = "producto" className = "form-label">Producto:</label>
             <select className ="form-select" id="producto" onChange = {(e) => setCategoria(e.target.value)} required>
               <option selected disabled value="">Seleccione la categoría:</option>
-              <option>Categoría uno</option>
-              <option>Categoría dos</option>
-              <option>Categoría tres</option>
-              <option>Categoría cuatro</option>
+              <option>Gestión ventas</option>
+              <option>Gestión personal</option>
             </select>
           </div>
 
@@ -169,7 +174,7 @@ export const CrearCliente = ({ nit }) => {
             </select>
           </div>
 
-          <div className="col-md-4 formatoContenedorBoton">
+          <div className="col-md-12 formatoContenedorBoton">
             <button className="btn btn-primary formatoBoton" type="submit" onClick = {crearCliente}>Crear</button>
           </div>
 

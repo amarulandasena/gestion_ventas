@@ -11,6 +11,9 @@
     font-weight: bold;
     color: #000;
     margin: 10px;
+
+    display: flex;
+    justify-content: space-between;
     
     border: 1px solid #000;
     border-radius: 5px;
@@ -20,4 +23,29 @@
     margin-bottom: 6px;
     border: none;
     background-color: #C4D4F5;
+}
+
+.formatoBotonValidar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:425px) {
+    .formatoValidarInput {
+        font-family: Garamond;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #000;
+        margin: 10px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        border: 1px solid #000;
+        border-radius: 5px;
+
+        padding-bottom: 5px;
+}
 }
