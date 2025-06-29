@@ -27,12 +27,12 @@ export const Login = ( {funcion, funcion1}) => {
   const[numeroIdentificacion, setNumeroIdentificacion] = useState('');
   const[contrasegna, setContrasegna] = useState('');
 
-  // Función para cancelar el ingreso.
-  const cancelar = (e) => {
-  e.preventDefault();
+  // Función para regresar a la página de inicio.
+  const regresar = (e) => {
+    e.preventDefault();
 
-  navegarInicio('/');
-}
+    navegarInicio('/');
+  }
 
   // Función para ingresar a la aplicación.
   const ingresar = async (e) => {
@@ -73,22 +73,22 @@ export const Login = ( {funcion, funcion1}) => {
       <div className = "row contenedorIngreso">
         <img src = {logoSoft}  alt = "logo A&D soft" className = "formatologo col-8 col-md-4" />
 
-         <form className = "text-center needs-validation">
-            <div className="mb-3">
-              <label htmlFor="numeroIdentificacion" className="form-label">Número de identificación:</label>
-              <input type="text" className="form-control formatoInput" id="numeroIdentificacion" onChange = {(e) => setNumeroIdentificacion(e.target.value)} aria-describedby="emailHelp" placeholder="Sin puntos ni comas" required />
-            </div>
+        <form className = "text-center needs-validation">
+          <div className="mb-3 formatoLabelInput">
+            <label htmlFor="numeroIdentificacion" className="form-label">Número de identificación:</label>
+            <input type="text" className="form-control formatoInput" id="numeroIdentificacion" onChange = {(e) => setNumeroIdentificacion(e.target.value)} aria-describedby="emailHelp" placeholder="Sin puntos ni comas" required />
+          </div>
 
-            <div className="mb-3">
-              <label htmlFor="contrasegna" className="form-label">Contraseña:</label>
-              <input type="password" className="form-control formatoInput" id="contrasegna" onChange = {(e) => setContrasegna(e.target.value)} placeholder="La asignada por los administradores" required />
-            </div>
+          <div className="mb-3 formatoLabelInput">
+            <label htmlFor="contrasegna" className="form-label">Contraseña:</label>
+            <input type="password" className="form-control formatoInput" id="contrasegna" onChange = {(e) => setContrasegna(e.target.value)} placeholder="La asignada por los administradores" required />
+          </div>
 
-            <div className="mb-3 formatoBotones">
-              <button type="submit" className="btn btn-primary formatoBoton formatoCancelar" onClick={cancelar}>Cancelar</button>
-              <button type="submit" className="btn btn-primary formatoBoton" onClick={ingresar}>Ingresar</button>
-            </div>  
-         </form>
+          <button type="button" class="btn btn-primary formatoBoton" onClick={regresar}>Cancelar</button>
+          <button type="button" class="btn btn-primary formatoBoton" onClick={ingresar}>Ingresar</button>
+           
+        </form>
+        <a href = "mailto:afmsamsung1981@gmail.com?subject=Recuperar contraseña&body=Número de identificación:    email:    celular:" className='formatoRecuperacion'> Olvidaste tu contraseña </a>
       </div>
     </section>
   )
