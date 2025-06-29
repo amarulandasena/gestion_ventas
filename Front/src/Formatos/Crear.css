@@ -1,0 +1,23 @@
+/* Formato para los formularios para crear nuevos registros */
+
+/* Formato para el contenedor del formulario */
+.formatoCrearCliente {
+    background-color: #FFF;
+    border-radius: 5px;
+    margin: 3px 0px;
+    padding: 10px 0px;
+    
+    color: #000;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'sans-serif';
+    font-weight: bold;
+}
+
+/* Formato para los input de crear*/
+.formatoInputCrear {
+    background-color: #60a7e7;
+    border: 1px solid #60a7e7;
+    min-height: 30px;
+    margin: 10px;
+}
+

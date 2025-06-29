@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 
-import './CrearCliente.css';
+import '../Formatos/Crear.css';
+import '../Formatos/ComponentesComunes.css';
 
 export const CrearCliente = () => {
 
@@ -80,52 +81,52 @@ export const CrearCliente = () => {
 
           <div className ="col-md-4">
             <label htmlFor="nit" className="form-label">Nit:</label>
-            <input type="text" className="form-control" id="nit" onChange = {(e) => setNit(e.target.value)} required />
+            <input type="text" className="form-control formatoInputCrear" id="nit" onChange = {(e) => setNit(e.target.value)} required />
           </div>
 
           <div className ="col-md-4">
             <label htmlFor="razonSocial" className="form-label">Razón social:</label>
-            <input type="text" className="form-control" id="razonSocial" onChange = {(e) => setRazonSocial(e.target.value)} required></input>
+            <input type="text" className="form-control formatoInputCrear" id="razonSocial" onChange = {(e) => setRazonSocial(e.target.value)} required></input>
           </div>
 
           <div className ="col-md-4">
             <label htmlFor="ciudad" className="form-label">Ciudad:</label>
-            <input type="text" className="form-control" id="ciudad" onChange = {(e) => setCiudad(e.target.value)} required></input>
+            <input type="text" className="form-control formatoInputCrear" id="ciudad" onChange = {(e) => setCiudad(e.target.value)} required></input>
           </div>
 
           <div className ="col-md-4">
             <label htmlFor="direccion" className="form-label">Dirección:</label>
-            <input type="text" className="form-control" id="direccion" onChange = {(e) => setDireccion(e.target.value)} required></input>
+            <input type="text" className="form-control formatoInputCrear" id="direccion" onChange = {(e) => setDireccion(e.target.value)} required></input>
           </div>
 
           <div className ="col-md-4">
             <label htmlFor="numeroTelefonico" className="form-label">Número telefónico:</label>
-            <input type="text" className="form-control" id="numeroTelefonico" onChange = {(e) => setNumeroTelefonico(e.target.value)} required></input>
+            <input type="text" className="form-control formatoInputCrear" id="numeroTelefonico" onChange = {(e) => setNumeroTelefonico(e.target.value)} required></input>
           </div>
 
           <div className ="col-md-4">
             <label htmlFor="email" className="form-label">Email:</label>
-            <input type="email" className="form-control" id="email" onChange = {(e) => setEmail(e.target.value)} required></input>
+            <input type="email" className="form-control formatoInputCrear" id="email" onChange = {(e) => setEmail(e.target.value)} required></input>
           </div>
 
           <div className ="col-md-4">
             <label htmlFor="administrador" className="form-label">Administrador:</label>
-            <input type="text" className="form-control" id="administrador" onChange = {(e) => setAdministrador(e.target.value)} required></input>
+            <input type="text" className="form-control formatoInputCrear" id="administrador" onChange = {(e) => setAdministrador(e.target.value)} required></input>
           </div>
 
           <div className ="col-md-4">
             <label htmlFor="numeroAdministrador" className="form-label">Número telefónico administrador:</label>
-            <input type="text" className="form-control" id="numeroAdministrador" onChange = {(e) => setNumeroAdministrador(e.target.value)} required></input>
+            <input type="text" className="form-control formatoInputCrear" id="numeroAdministrador" onChange = {(e) => setNumeroAdministrador(e.target.value)} required></input>
           </div>
 
           <div className ="col-md-4">
             <label htmlFor="emailAdministrador" className="form-label">Email administrador:</label>
-            <input type="email" className="form-control" id="emailAdministrador" onChange = {(e) => setEmailAdministrador(e.target.value)} required></input>
+            <input type="email" className="form-control formatoInputCrear" id="emailAdministrador" onChange = {(e) => setEmailAdministrador(e.target.value)} required></input>
           </div>
 
           <div className ="col-md-4">
             <label htmlFor = "sector" className = "form-label">Sector:</label>
-            <select className ="form-select" id="sector" onChange = {(e) => setSector(e.target.value)} required>
+            <select className ="form-select formatoInputCrear" id="sector" onChange = {(e) => setSector(e.target.value)} required>
               <option selected disabled value="">Seleccione el sector:</option>
               <option>Primario</option>
               <option>Secundario</option>
@@ -136,12 +137,12 @@ export const CrearCliente = () => {
 
           <div className ="col-md-4">
             <label htmlFor="actividad" className="form-label">Actividad:</label>
-            <input type="text" className="form-control" id="actividad" onChange = {(e) => setActividad(e.target.value)} required></input>
+            <input type="text" className="form-control formatoInputCrear" id="actividad" onChange = {(e) => setActividad(e.target.value)} required></input>
           </div>
 
           <div className ="col-md-4">
             <label htmlFor = "tamagno" className = "form-label">Tamaño:</label>
-            <select className ="form-select" id="tamagno" onChange = {(e) => setTamagno(e.target.value)} required>
+            <select className ="form-select formatoInputCrear" id="tamagno" onChange = {(e) => setTamagno(e.target.value)} required>
               <option selected disabled value="">Seleccione el tamaño:</option>
               <option>Micro</option>
               <option>Pequeña</option>
@@ -152,12 +153,12 @@ export const CrearCliente = () => {
 
           <div className ="col-md-4">
             <label htmlFor="numEmpleados" className="form-label">Número de empleados:</label>
-            <input type="number" className="form-control" id="numEmpleados" onChange = {(e) => setNumEmpleados(e.target.value)} required></input>
+            <input type="number" className="form-control formatoInputCrear" id="numEmpleados" onChange = {(e) => setNumEmpleados(e.target.value)} required></input>
           </div>
 
           <div className ="col-md-4">
             <label htmlFor = "producto" className = "form-label">Producto:</label>
-            <select className ="form-select" id="producto" onChange = {(e) => setCategoria(e.target.value)} required>
+            <select className ="form-select formatoInputCrear" id="producto" onChange = {(e) => setCategoria(e.target.value)} required>
               <option selected disabled value="">Seleccione la categoría:</option>
               <option>Categoría uno</option>
               <option>Categoría dos</option>
@@ -168,7 +169,7 @@ export const CrearCliente = () => {
 
           <div className ="col-md-4">
             <label htmlFor = "periodoPago" className = "form-label">Periodo de pago:</label>
-            <select className ="form-select" id="periodoPago" onChange = {(e) => setPeriodoPago(e.target.value)} required>
+            <select className ="form-select formatoInputCrear" id="periodoPago" onChange = {(e) => setPeriodoPago(e.target.value)} required>
               <option selected disabled value="">Seleccione el periodo de pago:</option>
               <option>30 días</option>
               <option>60 días</option>
@@ -176,7 +177,7 @@ export const CrearCliente = () => {
             </select>
           </div>
 
-          <div className="col-md-12 formatoContenedorBoton">
+          <div className="col-md-12">
             <button className="btn btn-primary formatoBoton" type="submit" onClick = {crearCliente}>Crear</button>
           </div>
 

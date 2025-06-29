@@ -1,0 +1,29 @@
+/* Formato a los bloques de validación de registros existentes */
+
+/* Formato para el bloque contenedor del formulario para validar */
+.formatoValidar {
+    min-height: 130px;
+
+    background-color: #FFF;
+    border: 1px solid #000; 
+    border-radius: 5px;
+    color: #000;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'sans-serif';
+    font-weight: bold;
+
+    padding: 15px 10px;
+    margin: 5px 0px 5px 10px;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formatoValidar div {
+    margin-left: 50px;
+}
+
+
+

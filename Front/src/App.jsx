@@ -10,7 +10,7 @@ import { PieDePagina } from './PieDePagina/PieDePagina';
 import { BarraDeNavegacionApp } from './BarraDeNavegacionApp/BarraDeNavegacionApp';
 
 import { Login } from './login/Login';
-import { ValidarCliente } from './Cliente/ValidarCliente/ValidarCliente';
+import { ValidarCliente } from './Cliente/ValidarCliente';
 import { ActualizarCliente } from './Cliente/ActualizarCliente/ActualizarCliente';
 import { ConsultarCliente } from './Cliente/ConsultarCliente/ConsultarCliente';
 
