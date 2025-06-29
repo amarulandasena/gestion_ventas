@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import './ActualizarCliente.css';
+import './FormatoActualizaciones.css';
 
 export const ActualizarCiudad = () => {
 
@@ -43,12 +43,12 @@ export const ActualizarCiudad = () => {
       <form className="col-9 col-md-9 formatoActualizarCliente">
         <div className ="col-12 col-md-12">
           <label htmlFor="nit" className="form-label">Nit:</label>
-          <input type="text" className="form-control" id="nit" onChange = {(e) => setNit(e.target.value)} required />
+          <input type="text" className="form-control formatoInput" id="nit" onChange = {(e) => setNit(e.target.value)} required />
         </div>
 
         <div className ="col-12 col-md-12">
           <label htmlFor="ciudad" className="form-label">Ciudad:</label>
-          <input type="text" className="form-control" id="ciudad" onChange = {(e) => setCiudad(e.target.value)} required></input>
+          <input type="text" className="form-control formatoInput" id="ciudad" onChange = {(e) => setCiudad(e.target.value)} required></input>
         </div>
 
         <div className="col-12 col-md-12 formatoContenedorBoton">

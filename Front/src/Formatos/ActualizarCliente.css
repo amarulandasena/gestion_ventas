@@ -1,0 +1,21 @@
+/* Formato del contenedor principal */ 
+.contenedorActualizaciones {
+    background-color: #FFF;
+    border-radius: 5px;
+    color: #000;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'sans-serif';
+    font-weight: bold;
+}
+
+.formatoActualizar {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+p {
+    text-align: center;
+    font-size: 20px;
+}
+
+

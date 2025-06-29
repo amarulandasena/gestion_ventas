@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
-import './ActualizarCliente.css';
-
-import React from 'react'
+import './FormatoActualizaciones.css';
 
 export const ActualizarSector = () => {
 
@@ -45,12 +43,12 @@ export const ActualizarSector = () => {
       <form className="col-9 col-md-9 formatoActualizarCliente">
         <div className ="col-12 col-md-12">
           <label htmlFor="nit" className="form-label">Nit:</label>
-          <input type="text" className="form-control" id="nit" onChange = {(e) => setNit(e.target.value)} required />
+          <input type="text" className="form-control formatoInput" id="nit" onChange = {(e) => setNit(e.target.value)} required />
         </div>
 
         <div className ="col-12 col-md-12">
           <label htmlFor = "sector" className = "form-label">Sector:</label>
-          <select className ="form-select" id="sector" onChange = {(e) => setSector(e.target.value)} required>
+          <select className ="form-select formatoInput" id="sector" onChange = {(e) => setSector(e.target.value)} required>
             <option selected disabled value="">Seleccione el sector:</option>
             <option>Primario</option>
             <option>Secundario</option>
@@ -59,8 +57,8 @@ export const ActualizarSector = () => {
           </select>
         </div>
 
-        <div className="col-12 col-md-12 formatoContenedorBoton">
-          <button className="btn btn-primary formatoBoton formatoBoton1" type="submit" onClick = {modificar}>Modificar</button>
+        <div className="col-12 col-md-12">
+          <button className="btn btn-primary formatoBoton" type="submit" onClick = {modificar}>Modificar</button>
         </div>
       </form>
     </article>

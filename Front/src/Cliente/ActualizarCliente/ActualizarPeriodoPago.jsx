@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import './ActualizarCliente.css';
+import './FormatoActualizaciones.css';
 
 export const ActualizarPeriodoPago = () => {
 
@@ -42,12 +42,12 @@ export const ActualizarPeriodoPago = () => {
       <form className="col-9 col-md-9 formatoActualizarCliente">
         <div className ="col-12 col-md-12">
           <label htmlFor="nit" className="form-label">Nit:</label>
-          <input type="text" className="form-control" id="nit" onChange = {(e) => setNit(e.target.value)} required />
+          <input type="text" className="form-control formatoInput" id="nit" onChange = {(e) => setNit(e.target.value)} required />
         </div>
 
         <div className ="col-12 col-md-12">
           <label htmlFor = "periodoPago" className = "form-label">Periodo de pago:</label>
-          <select className ="form-select" id="periodoPago" onChange = {(e) => setPeriodoPago(e.target.value)} required>
+          <select className ="form-select formatoInput" id="periodoPago" onChange = {(e) => setPeriodoPago(e.target.value)} required>
             <option selected disabled value="">Seleccione el periodo de pago:</option>
             <option>30 días</option>
             <option>60 días</option>
@@ -55,8 +55,8 @@ export const ActualizarPeriodoPago = () => {
           </select>
         </div>
 
-        <div className="col-12 col-md-12 formatoContenedorBoton">
-          <button className="btn btn-primary formatoBoton formatoBoton1" type="submit" onClick = {modificar}>Modificar</button>
+        <div className="col-12 col-md-12">
+          <button className="btn btn-primary formatoBoton" type="submit" onClick = {modificar}>Modificar</button>
         </div>
       </form>
     </article>
