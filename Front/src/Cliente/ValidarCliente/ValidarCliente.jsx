@@ -40,8 +40,8 @@ export const ValidarCliente = () => {
   }
 
   return (
-    <section className='container-fluid '>
-      <article className="row formatoValidar" >
+    <section className='container-fluid'>
+      <article className="row formatoValidar">
         <form className="col-4 col-md-4 formatoValidarInput">
           <div className ="col-6 col-md-6">
             <label htmlFor="nit" className="form-label">Nit:</label>

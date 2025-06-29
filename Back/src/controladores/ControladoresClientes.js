@@ -40,9 +40,13 @@ const leerCliente = (req, res) => {
       
       if (err) {
         res.status(400).send(err);
-      } else {
-        res.status(200).json(result[0]);
-      }
+      } 
+      if (result[0] !== undefined){
+          res.status(200).json(result[0]);
+        } else {
+          res.json({noEncontrado : true})
+        }
+      
     })
   } catch (err){
     res.status(500).send(err.message);
