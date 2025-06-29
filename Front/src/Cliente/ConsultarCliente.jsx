@@ -1,6 +1,8 @@
 import { useState } from "react"
 
-import './ConsultarCliente.css';
+import '../Formatos/Consultar.css';
+import '../Formatos/Validar.css';
+import '../Formatos/ComponentesComunes.css';
 
 export const ConsultarCliente = () => {
 
@@ -57,13 +59,13 @@ export const ConsultarCliente = () => {
   }
 
   return (
-    <section className='container-fluid formatoConsultar'>
+    <section className='container-fluid'>
       <article className="row">
-        <form className="col-4 col-md-4 formatoFormulario">
+        <form className="col-4 col-md-4 formatoValidar">
 
-          <div className ="col-6 col-md-6">
+          <div className ="col-6 col-md-6 formatoLabelInput">
             <label htmlFor="nit" className="form-label">Nit:</label>
-            <input type="text" className="form-control formatoInputConsulta" id="nit" onChange = {(e) => setNit(e.target.value)} required />
+            <input type="text" className="form-control formatoInput" id="nit" onChange = {(e) => setNit(e.target.value)} required />
           </div>
 
           <div className="col-6 col-md-6">
@@ -74,9 +76,9 @@ export const ConsultarCliente = () => {
 
       <article className="row">
          <div className="table-responsive ">
-            <table className="table formatoTabla">
+            <table className="table table-bordered border-primary table-hover formatoTabla">
               <thead>
-                <tr>
+                <tr className="table-primary">
                   <th scope="col"> Nit </th>
                   <th scope="col"> Razón social </th>
                   <th scope="col"> Ciudad </th>
@@ -96,9 +98,9 @@ export const ConsultarCliente = () => {
               </tbody>
             </table>
 
-            <table className="table formatoTabla">
+            <table className="table table-bordered border-primary table-hover">
               <thead>
-                <tr>
+                <tr className="table-primary">
                   <th scope="col"> Email </th>
                   <th scope="col"> Administrador </th>
                   <th scope="col"> Número del administrador </th>
@@ -118,9 +120,9 @@ export const ConsultarCliente = () => {
               </tbody>
             </table>
 
-            <table className="table formatoTabla">
+            <table className="table table-bordered border-primary table-hover">
               <thead>
-                <tr>
+                <tr className="table-primary">
                   <th scope="col"> Actividad </th>
                   <th scope="col"> Tamaño </th>
                   <th scope="col"> Número de empleados </th>

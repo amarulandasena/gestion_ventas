@@ -1,0 +1,18 @@
+/* Formato complementario para la tabla de datos */
+
+.formatoTabla {
+    margin: 10px 0px;
+    padding: 10px 0px;
+    border-radius: 5px; 
+}
+
+tr {
+    border-radius: 5px;
+    min-height: 10px;
+    font-size: bold;
+}
+
+tr th {
+    width: 50px;
+    border-radius: 5px;
+}

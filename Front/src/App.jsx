@@ -12,7 +12,7 @@ import { BarraDeNavegacionApp } from './BarraDeNavegacionApp/BarraDeNavegacionAp
 import { Login } from './login/Login';
 import { ValidarCliente } from './Cliente/ValidarCliente';
 import { ActualizarCliente } from './Cliente/ActualizarCliente';
-import { ConsultarCliente } from './Cliente/ConsultarCliente/ConsultarCliente';
+import { ConsultarCliente } from './Cliente/ConsultarCliente';
 
 function App() {
 
