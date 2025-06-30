@@ -7,6 +7,7 @@ const cors = require('cors');
 const rutaLogin = require('../rutas/RutaLogin.js');
 const rutaClientes = require('../rutas/RutasClientes.js');
 const rutaActualizarClientes = require('../rutas/RutasActualizarClientes.js');
+const rutaPersonal = require('../rutas/RutasEmpleados.js');
 
 // Instanciamos el servidor.
 const app = express();
@@ -20,6 +21,7 @@ app.use(cors());
 app.use('/login', rutaLogin);
 app.use('/cliente', rutaClientes);
 app.use('/actualizarClientes', rutaActualizarClientes);
+app.use('/empleado', rutaPersonal);
 
 // Exportamos la app.
 module.exports = app;

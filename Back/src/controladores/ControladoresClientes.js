@@ -28,6 +28,7 @@ const crearCliente = (req, res) => {
   }
 }
 
+
 const leerCliente = (req, res) => {
   const { nit } = req.params;
 
@@ -52,6 +53,7 @@ const leerCliente = (req, res) => {
     res.status(500).send(err.message);
   }
 }
+
 
 const eliminarCliente = (req, res) => {
   const { nit } = req.params;

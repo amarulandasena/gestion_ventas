@@ -15,6 +15,8 @@ import { ActualizarCliente } from './Cliente/ActualizarCliente';
 import { ConsultarCliente } from './Cliente/ConsultarCliente';
 import { EliminarCliente } from './Cliente/EliminarCliente';
 
+import { ValidarEmpleado } from './Personal/ValidarEmpleado';
+
 function App() {
 
   const [banderaBarra, setBanderaBarra] = useState(true);
@@ -42,6 +44,8 @@ function App() {
         <Route path='/consultarCliente' element={<ConsultarCliente />} />
 
         <Route path='/eliminarCliente' element={<EliminarCliente />} />
+
+        <Route path='/crearEmpleado' element={<ValidarEmpleado />} />
       </Routes>
 
       <PieDePagina

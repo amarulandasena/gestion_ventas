@@ -31,9 +31,9 @@ export const ValidarCliente = () => {
       console.log(data);
 
       if (data.razonSocial == undefined) {
-        alert('Cliente no registrado')
+        alert('Cliente no registrado');
       } else {
-        alert('Cliente ' + data.razonSocial + ' ya está registrado.')
+        alert('Cliente ' + data.razonSocial + ' ya está registrado.');
       }  
     }  catch (err) {
       console.error("Error al validar cliente:", err);
