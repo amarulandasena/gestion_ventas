@@ -53,7 +53,32 @@ const leerCliente = (req, res) => {
   }
 }
 
+const eliminarCliente = (req, res) => {
+  const { nit } = req.params;
+
+  const eliminarConsulta = `DELETE FROM cliente WHERE nit = ?;`;
+  const consulta = mysql2.format(eliminarConsulta, [nit]);
+
+  try {
+    database.query(consulta, (err, result) => {
+
+      if (err) {
+        res.status(400).send(err);
+      }
+
+      if (result.affectedRows == 1){
+        res.status(200).json({ message : 'Cliente eliminado correctamente.'})
+      } else {
+        res.status(404).json({ message : 'Cliente no registrado'})
+      }
+    })
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+}
+
 module.exports = {
   crearCliente,
-  leerCliente
+  leerCliente,
+  eliminarCliente
 }

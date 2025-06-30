@@ -13,6 +13,7 @@ import { Login } from './login/Login';
 import { ValidarCliente } from './Cliente/ValidarCliente';
 import { ActualizarCliente } from './Cliente/ActualizarCliente';
 import { ConsultarCliente } from './Cliente/ConsultarCliente';
+import { EliminarCliente } from './Cliente/EliminarCliente';
 
 function App() {
 
@@ -39,6 +40,8 @@ function App() {
         <Route path='/actualizarCliente' element={<ActualizarCliente />} />
 
         <Route path='/consultarCliente' element={<ConsultarCliente />} />
+
+        <Route path='/eliminarCliente' element={<EliminarCliente />} />
       </Routes>
 
       <PieDePagina
