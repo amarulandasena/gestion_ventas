@@ -3,6 +3,7 @@
 // Importamos los paquetes que necesitamos.
 const express = require('express');
 const cors = require('cors');
+const multer = require('multer');
 
 const rutaLogin = require('../rutas/RutaLogin.js');
 const rutaClientes = require('../rutas/RutasClientes.js');
@@ -17,6 +18,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded( { extended: true}));
 app.use(cors());
+
+// Configuramos multer para recibir archivos en memoria
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
 
 // Creamos los endpoint.
 app.use('/login', rutaLogin);
