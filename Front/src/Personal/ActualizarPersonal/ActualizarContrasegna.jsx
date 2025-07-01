@@ -48,7 +48,7 @@ export const ActualizarContrasegna = () => {
 
         <div className ="col-12 col-md-12">
           <label htmlFor="contrasegna" className="form-label">Contraseña:</label>
-          <input type="text" className="form-control formatoInput" id="contrasegna" onChange = {(e) => setContrasegna(e.target.value)} required />
+          <input type="password" className="form-control formatoInput" id="contrasegna" onChange = {(e) => setContrasegna(e.target.value)} required />
         </div>
 
         <div className="col-12 col-md-12">

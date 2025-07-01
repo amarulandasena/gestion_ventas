@@ -46,8 +46,8 @@ export const BarraDeNavegacionApp = ( { banderaBarra }) => {
                 <ul className="dropdown-menu">
                   <li><Link to="/crearEmpleado" className="dropdown-item formatoMenu">Crear empleado</Link></li>
                   <li><Link to="/actualizarEmpleado" className="dropdown-item formatoMenu">Modificar empleado</Link></li>
-                  <li><Link to="/" className="dropdown-item formatoMenu">Consultar empleado</Link></li>
-                  <li><Link to="/" className="dropdown-item formatoMenu">Eliminar empleado</Link></li>
+                  <li><Link to="/consultarEmpleado" className="dropdown-item formatoMenu">Consultar empleado</Link></li>
+                  <li><Link to="/eliminarEmpleado" className="dropdown-item formatoMenu">Eliminar empleado</Link></li>
                 </ul>
               </li>
             </ul>

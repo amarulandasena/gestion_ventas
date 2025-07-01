@@ -145,7 +145,7 @@ export const CrearEmpleado = () => {
 
           <div className ="col-md-4">
             <label htmlFor="contrasegna" className="form-label">Contraseña:</label>
-            <input type="text" className="form-control formatoInputCrear" id="contrasegna" onChange = {(e) => setContrasegna(e.target.value)} required />
+            <input type="password" className="form-control formatoInputCrear" id="contrasegna" onChange = {(e) => setContrasegna(e.target.value)} required />
           </div>
 
           <div className="col-md-12">
