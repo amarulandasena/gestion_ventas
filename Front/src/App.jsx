@@ -21,6 +21,7 @@ import { ConsultarEmpleado } from './Personal/ConsultarEmpleado';
 import { EliminarEmpleado } from './Personal/EliminarEmpleado';
 
 import { ValidarProducto } from './Producto/ValidarProducto';
+import { ActualizarProducto } from './Producto/ActualizarProducto';
 
 function App() {
 
@@ -59,6 +60,8 @@ function App() {
         <Route path='/eliminarEmpleado' element={<EliminarEmpleado />} />
 
         <Route path='/crearProducto' element={<ValidarProducto />} />
+
+        <Route path='/actualizarProducto' element={<ActualizarProducto />} />
       </Routes>
 
       <PieDePagina

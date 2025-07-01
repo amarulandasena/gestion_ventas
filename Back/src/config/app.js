@@ -11,11 +11,12 @@ const rutaActualizarClientes = require('../rutas/RutasActualizarClientes.js');
 const rutaPersonal = require('../rutas/RutasEmpleados.js');
 const rutaActualizarPersonal = require('../rutas/RutasActualizarEmpleados.js');
 const rutaProductos = require('../rutas/RutasProductos.js');
+const rutaActualizarProductos = require('../rutas/RutasActualizarProductos.js');
 
 // Instanciamos el servidor.
 const app = express();
 
-// Damos formato JSON a la ifnromación que recibimos del servidor.
+// Damos formato JSON a la información que recibimos del servidor.
 app.use(express.json());
 app.use(express.urlencoded( { extended: true}));
 app.use(cors());
@@ -32,6 +33,7 @@ app.use('/actualizarClientes', rutaActualizarClientes);
 app.use('/empleado', rutaPersonal);
 app.use('/actualizarEmpleados', rutaActualizarPersonal);
 app.use('/producto', rutaProductos);
+app.use('/actualizarProductos', rutaActualizarProductos);
 
 // Exportamos la app.
 module.exports = app;
