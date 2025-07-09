@@ -78,72 +78,72 @@ export const CrearEmpleado = () => {
 
         <form className="row g-3 needs-validation">
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="numIdentificacion" className="form-label">Número de identificación:</label>
             <input type="text" className="form-control formatoInputCrear" id="numIdentificacion" onChange = {(e) => setNumIdentificacion(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="nombres" className="form-label">Nombres:</label>
             <input type="text" className="form-control formatoInputCrear" id="nombres" onChange = {(e) => setNombres(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="apellidos" className="form-label">Apellidos:</label>
             <input type="text" className="form-control formatoInputCrear" id="apellidos" onChange = {(e) => setApellidos(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="fechaNacimiento" className="form-label">Fecha de nacimiento:</label>
             <input type="date" className="form-control formatoInputCrear" id="fechaNacimiento" onChange = {(e) => setFechaNacimiento(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="direccion" className="form-label">Dirección:</label>
             <input type="text" className="form-control formatoInputCrear" id="direccion" onChange = {(e) => setDireccion(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="numTelefonico" className="form-label">Número telefónico:</label>
             <input type="text" className="form-control formatoInputCrear" id="numTelefonico" onChange = {(e) => setNumTelefonico(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="numCelular" className="form-label">Número celular:</label>
             <input type="text" className="form-control formatoInputCrear" id="numCelular" onChange = {(e) => setNumCelular(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="email" className="form-label">Email:</label>
             <input type="email" className="form-control formatoInputCrear" id="email" onChange = {(e) => setEmail(e.target.value)} required></input>
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="contacto" className="form-label">Contacto:</label>
             <input type="text" className="form-control formatoInputCrear" id="contacto" onChange = {(e) => setContacto(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="numContacto" className="form-label">Número de contacto:</label>
             <input type="text" className="form-control formatoInputCrear" id="numContacto" onChange = {(e) => setNumContacto(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="cargo" className="form-label">Cargo:</label>
             <input type="text" className="form-control formatoInputCrear" id="cargo" onChange = {(e) => setCargo(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="fechaIngreso" className="form-label">Fecha de ingreso:</label>
             <input type="date" className="form-control formatoInputCrear" id="fechaIngreso" onChange = {(e) => setFechaIngreso(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="status" className="form-label">Status:</label>
             <input type="number" className="form-control formatoInputCrear" id="status" onChange = {(e) => setStatus(e.target.value)} required></input>
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="contrasegna" className="form-label">Contraseña:</label>
             <input type="password" className="form-control formatoInputCrear" id="contrasegna" onChange = {(e) => setContrasegna(e.target.value)} required />
           </div>

@@ -60,27 +60,27 @@ export const CrearProducto = () => {
       <article className='row formatoCrearCliente'>
         <form className="row g-3 needs-validation">
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="idProducto" className="form-label">Código del producto:</label>
             <input type="text" className="form-control formatoInputCrear" id="idProducto" onChange = {(e) => setIdProducto(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="nombreProducto" className="form-label">Nombre del producto:</label>
             <input type="text" className="form-control formatoInputCrear" id="nombreProducto" onChange = {(e) => setNombreProducto(e.target.value)} required />
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="precio" className="form-label">Precio:</label>
             <input type="number" className="form-control formatoInputCrear" id="precio" onChange = {(e) => setPrecio(e.target.value)} required></input>
           </div>
  
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor="existencias" className="form-label">Existencias:</label>
             <input type="number" className="form-control formatoInputCrear" id="existencias" onChange = {(e) => setExistencias(e.target.value)} required></input>
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor = "categoria" className = "form-label">Categoría:</label>
             <select className ="form-select formatoInputCrear" id="categoria" onChange = {(e) => setCategoria(e.target.value)} required>
               <option selected disabled value="">Seleccione la categoría:</option>
@@ -91,7 +91,7 @@ export const CrearProducto = () => {
             </select>
           </div>
 
-          <div className ="col-md-4">
+          <div className ="col-md-12 col-lg-4">
             <label htmlFor = "referencia" className = "form-label">Referencia:</label>
             <select className ="form-select formatoInputCrear" id="referencia" onChange = {(e) => setReferencia(e.target.value)} required>
               <option selected disabled value="">Seleccione la referencia:</option>

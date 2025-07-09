@@ -39,7 +39,7 @@ export const ActualizarPrecio = () => {
   }
 
   return (
-    <article className='col-4 col-md-4'>
+    <article className='col-12 col-md-4'>
       <form className="col-9 col-md-9 formatoActualizarCliente">
         <div className ="col-12 col-md-12">
           <label htmlFor="idProducto" className="form-label">Código del producto:</label>

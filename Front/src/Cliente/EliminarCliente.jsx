@@ -43,7 +43,7 @@ export const EliminarCliente = () => {
     <section className='container-fluid formatoEliminar'>
       <p> Ingrese el número de identificación del cliente que desea eliminar </p>
       <article className="row">
-        <form className="col-4 col-md-4 formatoValidar">
+        <form className="col-12 col-md-6 col-lg-4 formatoValidar">
           <div className ="col-6 col-md-6 formatoLabelInput">
             <label htmlFor="nit" className="form-label">Nit:</label>
             <input type="text" className="form-control formatoInput" id="nit" onChange = {(e) => setNit(e.target.value)} required />

@@ -57,7 +57,7 @@ export const ConsultarEmpleado = () => {
   return (
     <section className='container-fluid'>
       <article className="row">
-        <form className="col-4 col-md-4 formatoValidar">
+        <form className="col-12 col-md-6 col-lg-4 formatoValidar">
 
           <div className ="col-6 col-md-6 formatoLabelInput">
             <label htmlFor="numIdentificacion" className="form-label">Id:</label>

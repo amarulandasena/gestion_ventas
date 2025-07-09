@@ -73,7 +73,7 @@ export const Login = ( {funcion, funcion1}) => {
       <div className = "row contenedorIngreso">
         <img src = {logoSoft}  alt = "logo A&D soft" className = "formatologo col-8 col-md-4" />
 
-        <form className = "text-center needs-validation">
+        <form className = "col-8 text-center needs-validation">
           <div className="mb-3 formatoLabelInput">
             <label htmlFor="numeroIdentificacion" className="form-label">Número de identificación:</label>
             <input type="text" className="form-control formatoInput" id="numeroIdentificacion" onChange = {(e) => setNumeroIdentificacion(e.target.value)} aria-describedby="emailHelp" placeholder="Sin puntos ni comas" required />
@@ -84,8 +84,8 @@ export const Login = ( {funcion, funcion1}) => {
             <input type="password" className="form-control formatoInput" id="contrasegna" onChange = {(e) => setContrasegna(e.target.value)} placeholder="La asignada por los administradores" required />
           </div>
 
-          <button type="button" class="btn btn-primary formatoBoton" onClick={regresar}>Cancelar</button>
-          <button type="button" class="btn btn-primary formatoBoton" onClick={ingresar}>Ingresar</button>
+          <button type="button" className="btn btn-primary formatoBoton" onClick={regresar}>Cancelar</button>
+          <button type="button" className="btn btn-primary formatoBoton" onClick={ingresar}>Ingresar</button>
            
         </form>
         <a href = "mailto:afmsamsung1981@gmail.com?subject=Recuperar contraseña&body=Número de identificación:    email:    celular:" className='formatoRecuperacion'> Olvidaste tu contraseña </a>
