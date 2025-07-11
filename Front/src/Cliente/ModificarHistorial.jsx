@@ -1,37 +1,32 @@
-// Componente para el registro de los pagos hechos por los clientes.
-
 import { useState } from 'react';
 
 import '../Formatos/ComponentesComunes.css';
 import '../Formatos/Crear.css';
 import '../Formatos/Eliminar.css';
 
-export const CrearHistorial = () => {
+export const ModificarHistorial = () => {
 
-  // Hook para el registro del pago del cliente.
-  const[nit, setNit] = useState('');
+  // Hook para la modificación del pago.
+  const [idPago, setIdPago] = useState(0);
   const[fechaPago, setFechaPago] = useState(null);
 
-  // Variable para almacenar el mensaje enviado por el servidor.
-  let mensaje = '';
-
-  // Función para ingresar el pago del cliente.
-  const crearHistorial = async(e) => {
+  // Función para modificar la fecha del pago.
+  const modificarHistorial = async (e) => {
     e.preventDefault();
 
-    if(!nit || !fechaPago) {
-      alert('Ingrese todos los datos del pago a registrar.');
+    // Validamos que se ingresaron toddos los datos.
+    if(!idPago || !fechaPago) {
+      alert('Ingrese el pago a modificar.');
       return;
     }
 
-    // Creamos el objeto para el envío de los datos.
+    // Instanciamos el objeto para enviar los datos.
     let datosPago = {
-      'nit1' : nit,
       'historial' : fechaPago
     }
 
-    await fetch('http://localhost:3001/historial/', {
-      method : 'POST',
+    await fetch(`http://localhost:3001/historial/${idPago}`, {
+      method : 'PUT',
       headers : {
         'Content-type' : 'application/json',
       },
@@ -39,21 +34,20 @@ export const CrearHistorial = () => {
     })
     .then((response) => response.json())
     .then((data) => {
-      mensaje = data.message;
+      console.log(data);
+      alert(data.message);
     })
-
-    alert(mensaje);
   }
 
-  return (
+  return ( 
     <section className='container-fluid formatoEliminar'>
       <article className='row formatoCrearCliente'>
-        
+
         <form className="row g-3 needs-validation">
 
           <div className ="col-md-12 col-lg-4">
-            <label htmlFor="nit" className="form-label">Nit:</label>
-            <input type="text" className="form-control formatoInputCrear" id="nit" onChange = {(e) => setNit(e.target.value)} required />
+            <label htmlFor="idPago" className="form-label">Código del pago:</label>
+            <input type="number" className="form-control formatoInputCrear" id="idPago" onChange = {(e) => setIdPago(e.target.value)} required />
           </div>
 
           <div className ="col-md-12 col-lg-4">
@@ -62,11 +56,10 @@ export const CrearHistorial = () => {
           </div>
 
           <div className="col-md-12 col-lg-4">
-            <button className="btn btn-primary formatoBoton" type="submit" onClick = {crearHistorial}>Registrar</button>
+            <button className="btn btn-primary formatoBoton" type="submit" onClick = {modificarHistorial}>Modificar</button>
           </div>
         </form>
       </article>
     </section>
   )
 }
-
