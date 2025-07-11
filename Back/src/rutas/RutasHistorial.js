@@ -1,6 +1,6 @@
 const Router = require('express');
 
-const { crearHistorial, actualizarHistorial } = require('../controladores/ControladoresHistorial.js');
+const { crearHistorial, actualizarHistorial, leerHistorial } = require('../controladores/ControladoresHistorial.js');
 
 const router = Router();
 
@@ -9,5 +9,8 @@ router.post('/', crearHistorial);
 
 // Petición PUT.
 router.put('/:idPago', actualizarHistorial);
+
+// Petición GET.
+router.get('/:nit1', leerHistorial);
 
 module.exports = router;

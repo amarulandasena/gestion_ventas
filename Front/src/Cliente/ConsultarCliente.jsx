@@ -37,7 +37,6 @@ export const ConsultarCliente = () => {
     .then((response) => response.json())
     .then((data) => {
       if(data.noEncontrado){
-        console.log(data);
         alert('Cliente no registrado');
       } else {
         setRazonSocial(data.razonSocial);
