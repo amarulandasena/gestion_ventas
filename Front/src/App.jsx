@@ -15,7 +15,7 @@ import { ActualizarCliente } from './Cliente/ActualizarCliente';
 import { ConsultarCliente } from './Cliente/ConsultarCliente';
 import { EliminarCliente } from './Cliente/EliminarCliente';
 import { CrearHistorial } from './Cliente/CrearHistorial';
-import { ModificarHistorial } from './Cliente/ModificarHistorial';
+import { ActualizarHistorial } from './Cliente/ActualizarHistorial';
 import { ConsultarHistorial } from './Cliente/ConsultarHistorial';
 
 import { ValidarEmpleado } from './Personal/ValidarEmpleado';
@@ -74,7 +74,7 @@ function App() {
 
         <Route path='/crearHistorial' element={<CrearHistorial />} />
 
-        <Route path='/modificarHistorial' element={<ModificarHistorial />} />
+        <Route path='/modificarHistorial' element={<ActualizarHistorial />} />
 
         <Route path='/consultarHistorial' element={<ConsultarHistorial />} />
       </Routes>

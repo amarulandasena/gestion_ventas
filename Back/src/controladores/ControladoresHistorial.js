@@ -51,6 +51,33 @@ const leerHistorial = (req, res) => {
 }
 
 
+const actualizarNitHistorial = (req, res) => {
+  
+  const { idPago } = req.params;
+  const { nit1 } = req.body;
+
+  const actualizarConsulta = `UPDATE historial SET nit1 = ? WHERE idPago = ?;`;
+  const consulta = mysql2.format(actualizarConsulta, [nit1, idPago]);
+
+  try {
+    database.query(consulta, (err, result) => {
+
+      if (err) {
+         res.status(400).send(err);
+      }
+
+      if (result.affectedRows == 1){
+        res.status(200).json({ message : 'Nit actualizado correctamente.'})
+      } else {
+        res.status(404).json({ message : 'Pago no registrado'})
+      }
+    })
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+}
+
+
 const actualizarHistorial = (req, res) => {
   
   const { idPago } = req.params;
@@ -77,8 +104,37 @@ const actualizarHistorial = (req, res) => {
   }
 }
 
+
+const actualizarValorHistorial = (req, res) => {
+  
+  const { idPago } = req.params;
+  const { valor } = req.body;
+
+  const actualizarConsulta = `UPDATE historial SET valor = ? WHERE idPago = ?;`;
+  const consulta = mysql2.format(actualizarConsulta, [valor, idPago]);
+
+  try {
+    database.query(consulta, (err, result) => {
+
+      if (err) {
+         res.status(400).send(err);
+      }
+
+      if (result.affectedRows == 1){
+        res.status(200).json({ message : 'Valor actualizado correctamente.'})
+      } else {
+        res.status(404).json({ message : 'Pago no registrado'})
+      }
+    })
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+}
+
 module.exports = {
     crearHistorial,
+    actualizarNitHistorial,
     actualizarHistorial,
+    actualizarValorHistorial,
     leerHistorial
 }
