@@ -29,7 +29,8 @@ export const ConsultarHistorial = () => {
       data.forEach((pago) => {
         const nuevaFila = document.createElement('tr');
         nuevaFila.innerHTML = `<th scope="row">${pago.idPago}</th>
-                               <td>${pago.historial}</td>`;
+                               <td>${pago.historial}</td>
+                               <td>${pago.valor}</td>`;
         cuerpoTabla.appendChild(nuevaFila);
       })
 
@@ -71,6 +72,7 @@ export const ConsultarHistorial = () => {
               <tr className="table-primary">
                 <th scope="col"> Código del pago </th>
                 <th scope="col"> Fecha del pago </th>  
+                <th scope="col"> Valor </th> 
               </tr>
             </thead>
 
