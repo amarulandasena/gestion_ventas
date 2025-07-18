@@ -1,6 +1,6 @@
 import './Login.css';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import logoSoft from '../Imagenes/logoSoft.jpg';
@@ -22,6 +22,9 @@ export const Login = ( {funcion, funcion1}) => {
   // Variables para redireccionar la navegación.
   const navegarPrincipal = useNavigate();
   const navegarInicio = useNavigate();
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
 
   // Hooks para validar el Login.
   const[numeroIdentificacion, setNumeroIdentificacion] = useState('');
@@ -66,6 +69,8 @@ export const Login = ( {funcion, funcion1}) => {
       navegarPrincipal('/paginaPrincipal');
     }
   })
+
+  limpiarFormulario.current.reset();
 }
 
   return (
@@ -73,7 +78,7 @@ export const Login = ( {funcion, funcion1}) => {
       <div className = "row contenedorIngreso">
         <img src = {logoSoft}  alt = "logo A&D soft" className = "formatologo col-8 col-md-4" />
 
-        <form className = "col-8 text-center needs-validation">
+        <form className = "col-8 text-center needs-validation" ref={limpiarFormulario}>
           <div className="mb-3 formatoLabelInput">
             <label htmlFor="numeroIdentificacion" className="form-label">Número de identificación:</label>
             <input type="text" className="form-control formatoInput" id="numeroIdentificacion" onChange = {(e) => setNumeroIdentificacion(e.target.value)} aria-describedby="emailHelp" placeholder="Sin puntos ni comas" required />

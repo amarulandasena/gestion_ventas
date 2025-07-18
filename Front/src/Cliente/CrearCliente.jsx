@@ -1,11 +1,14 @@
 // Componente para el registro de un nuevo cliente
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import '../Formatos/Crear.css';
 import '../Formatos/ComponentesComunes.css';
 
 export const CrearCliente = () => {
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
 
   // Hooks para capturar los datos.
   const[nit, setNit] = useState('');
@@ -70,6 +73,7 @@ export const CrearCliente = () => {
     });
 
     alert(mensaje);
+    limpiarFormulario.current.reset();
   }
 
 
@@ -77,7 +81,7 @@ export const CrearCliente = () => {
     <section className='container-fluid'>
       <article className='row formatoCrearCliente'>
 
-        <form className="row g-3 needs-validation">
+        <form className="row g-3 needs-validation" ref={limpiarFormulario}>
 
           <div className ="col-md-12 col-lg-4">
             <label htmlFor="nit" className="form-label">Nit:</label>
