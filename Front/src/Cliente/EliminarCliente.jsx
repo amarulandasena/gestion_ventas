@@ -1,13 +1,15 @@
 // Componente para eliminar un cliente registrado.
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import '../Formatos/ComponentesComunes.css';
 import '../Formatos/Validar.css';
 import '../Formatos/Eliminar.css';
 
 export const EliminarCliente = () => {
-  
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
 
   // Hook para validar el cliente.
   const[nit, setNit] = useState('');
@@ -36,14 +38,14 @@ export const EliminarCliente = () => {
     } else {
       alert('Cancelado.')
     }
-
+    limpiarFormulario.current.reset();
   }
 
   return (
     <section className='container-fluid formatoEliminar'>
       <p> Ingrese el número de identificación del cliente que desea eliminar </p>
       <article className="row">
-        <form className="col-12 col-md-6 col-lg-4 formatoValidar">
+        <form className="col-12 col-md-6 col-lg-4 formatoValidar" ref={limpiarFormulario}>
           <div className ="col-6 col-md-6 formatoLabelInput">
             <label htmlFor="nit" className="form-label">Nit:</label>
             <input type="text" className="form-control formatoInput" id="nit" onChange = {(e) => setNit(e.target.value)} required />

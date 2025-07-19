@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import './FormatoActualizaciones.css';
 
 
 export const ActualizarDireccion = () => {
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
 
   // Hooks para validar los datos a actualizar.
   const[nit, setNit] = useState('');
@@ -35,12 +38,13 @@ export const ActualizarDireccion = () => {
     .then((data) => {
       console.log(data);
       alert(data.message);
+      limpiarFormulario.current.reset();
     })
   }
 
   return (
     <article className='col-12 col-md-4'>
-      <form className="col-9 col-md-9 formatoActualizarCliente">
+      <form className="col-9 col-md-9 formatoActualizarCliente" ref={limpiarFormulario}>
         <div className ="col-12 col-md-12">
           <label htmlFor="nit" className="form-label">Nit:</label>
           <input type="text" className="form-control formatoInput" id="nit" onChange = {(e) => setNit(e.target.value)} required />
