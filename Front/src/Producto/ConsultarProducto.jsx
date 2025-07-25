@@ -1,10 +1,13 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 import '../Formatos/Consultar.css';
 import '../Formatos/Validar.css';
 import '../Formatos/ComponentesComunes.css';
 
 export const ConsultarProducto = () => {
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
 
   // Hooks para capturar los datos.
   const[idProducto, setIdProducto] = useState('');
@@ -43,13 +46,14 @@ export const ConsultarProducto = () => {
         setImagen(data.imagen);
         setDescuento(data.descuento);
       }
+      limpiarFormulario.current.reset();
     })
 
   }
   return (
     <section className='container-fluid'>
       <article className="row">
-        <form className="col-12 col-md-6 col-lg-4 formatoValidar">
+        <form className="col-12 col-md-6 col-lg-4 formatoValidar" ref={limpiarFormulario}>
           <div className ="col-6 col-md-6 formatoLabelInput">
             <label htmlFor="idProducto" className="form-label">Código:</label>
             <input type="text" className="form-control formatoInputCrear" id="idProducto" onChange = {(e) => setIdProducto(e.target.value)} required />

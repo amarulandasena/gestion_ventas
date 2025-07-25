@@ -1,12 +1,15 @@
 // Componente para el registro de los pagos hechos por los clientes.
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import '../Formatos/ComponentesComunes.css';
 import '../Formatos/Crear.css';
 import '../Formatos/Eliminar.css';
 
 export const CrearHistorial = () => {
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
 
   // Hook para el registro del pago del cliente.
   const[nit, setNit] = useState('');
@@ -45,13 +48,14 @@ export const CrearHistorial = () => {
     })
 
     alert(mensaje);
+    limpiarFormulario.current.reset();
   }
 
   return (
     <section className='container-fluid formatoEliminar'>
       <article className='row formatoCrearCliente'>
         
-        <form className="row g-3 needs-validation">
+        <form className="row g-3 needs-validation" ref={limpiarFormulario}>
 
           <div className ="col-md-12 col-lg-3">
             <label htmlFor="nit" className="form-label">Nit:</label>

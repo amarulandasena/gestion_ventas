@@ -37,7 +37,7 @@ export const ActualizarActividad = () => {
     .then((data) => {
       console.log(data);
       alert(data.message);
-       limpiarFormulario.current.reset();
+      limpiarFormulario.current.reset();
     })
   }
 

@@ -1,11 +1,14 @@
 // Componente para el registro de un nuevo empleado.
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import '../Formatos/Crear.css';
 import '../Formatos/ComponentesComunes.css';
 
 export const CrearEmpleado = () => {
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
 
   // Hooks para capturar los datos.
   const[numIdentificacion, setNumIdentificacion] = useState('');
@@ -68,6 +71,7 @@ export const CrearEmpleado = () => {
     });
 
     alert(mensaje);
+    limpiarFormulario.current.reset();
   }
 
 
@@ -76,7 +80,7 @@ export const CrearEmpleado = () => {
     <section className='container-fluid'>
       <article className='row formatoCrearCliente'>
 
-        <form className="row g-3 needs-validation">
+        <form className="row g-3 needs-validation" ref={limpiarFormulario}>
 
           <div className ="col-md-12 col-lg-4">
             <label htmlFor="numIdentificacion" className="form-label">Número de identificación:</label>

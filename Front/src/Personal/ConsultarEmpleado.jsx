@@ -1,10 +1,13 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 import '../Formatos/Consultar.css';
 import '../Formatos/Validar.css';
 import '../Formatos/ComponentesComunes.css';
 
 export const ConsultarEmpleado = () => {
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
 
   // Hooks para capturar los datos.
   const[numIdentificacion, setNumIdentificacion] = useState('');
@@ -52,12 +55,13 @@ export const ConsultarEmpleado = () => {
         setFechaIngreso(data.fechaIngreso);
       }
     })
+    limpiarFormulario.current.reset();
   }
 
   return (
     <section className='container-fluid'>
       <article className="row">
-        <form className="col-12 col-md-6 col-lg-4 formatoValidar">
+        <form className="col-12 col-md-6 col-lg-4 formatoValidar" ref={limpiarFormulario}>
 
           <div className ="col-6 col-md-6 formatoLabelInput">
             <label htmlFor="numIdentificacion" className="form-label">Id:</label>

@@ -1,11 +1,14 @@
 // Componente para el registro de un nuevo producto.
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import '../Formatos/Crear.css';
 import '../Formatos/ComponentesComunes.css';
 
 export const CrearProducto = () => {
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
 
   // Hooks para capturar los datos.
   const[idProducto, setIdProducto] = useState('');
@@ -53,12 +56,13 @@ export const CrearProducto = () => {
     });
 
     alert(mensaje);
+    limpiarFormulario.current.reset();
 
   }
   return (
     <section className='container-fluid'>
       <article className='row formatoCrearCliente'>
-        <form className="row g-3 needs-validation">
+        <form className="row g-3 needs-validation" ref={limpiarFormulario}>
 
           <div className ="col-md-12 col-lg-4">
             <label htmlFor="idProducto" className="form-label">Código del producto:</label>

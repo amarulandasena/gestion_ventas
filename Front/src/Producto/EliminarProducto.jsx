@@ -1,12 +1,15 @@
 // Componente para eliminar un producto registrado.
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import '../Formatos/ComponentesComunes.css';
 import '../Formatos/Validar.css';
 import '../Formatos/Eliminar.css';
 
 export const EliminarProducto = () => {
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
 
   // Hooks para capturar los datos.
   const[idProducto, setIdProducto] = useState('');
@@ -35,14 +38,14 @@ export const EliminarProducto = () => {
     } else {
       alert('Cancelado.')
     }
-
+    limpiarFormulario.current.reset();
   }
 
   return (
     <section className='container-fluid formatoEliminar'>
       <p> Ingrese el código del producto que desea eliminar </p>
       <article className="row">
-        <form className="col-12 col-md-6 col-lg-4 formatoValidar">
+        <form className="col-12 col-md-6 col-lg-4 formatoValidar" ref={limpiarFormulario}>
           <div className ="col-6 col-md-6 formatoLabelInput">
             <label htmlFor="idProducto" className="form-label">Código:</label>
             <input type="text" className="form-control formatoInputCrear" id="idProducto" onChange = {(e) => setIdProducto(e.target.value)} required />

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useState } from "react"
 
 import '../Formatos/Consultar.css';
 import '../Formatos/Validar.css';
@@ -7,6 +7,9 @@ import '../Formatos/Crear.css';
 import '../Formatos/Eliminar.css';
 
 export const ConsultarHistorial = () => {
+
+  // Variable para limpiar los campos del formulario.
+    const limpiarFormulario = useRef(null);
 
   // Hooks para capturar los datos.
   const[nit1, setNit1] = useState('');
@@ -44,6 +47,7 @@ export const ConsultarHistorial = () => {
       } else {
         generarLista(data);
       }
+      limpiarFormulario.current.reset();
     })
   }
 
@@ -51,7 +55,7 @@ export const ConsultarHistorial = () => {
     <section className='container-fluid'>
       <article className="row">
 
-        <form className="row g-3 needs-validation">
+        <form className="row g-3 needs-validation" ref={limpiarFormulario}>
 
           <div className ="col-md-12 col-lg-4">
             <label htmlFor="nit1" className="form-label">Nit:</label>

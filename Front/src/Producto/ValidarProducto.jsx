@@ -1,6 +1,6 @@
 // Componente para validar la existencia de un producto.
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import '../Formatos/ComponentesComunes.css';
 import '../Formatos/Validar.css';
@@ -8,6 +8,9 @@ import '../Formatos/Validar.css';
 import { CrearProducto } from './CrearProducto';
 
 export const ValidarProducto = () => {
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
 
   // Hooks para validar el producto.
   const[idProducto, setIdProducto] = useState('');
@@ -38,6 +41,7 @@ export const ValidarProducto = () => {
     }  catch (err) {
       console.error("Error al validar el producto.", err);
     }
+    limpiarFormulario.current.reset();
 
   }
 
@@ -45,7 +49,7 @@ export const ValidarProducto = () => {
   return (
     <section className='container-fluid'>
       <article className="row">
-        <form className="col-12 col-md-6 col-lg-4 formatoValidar">
+        <form className="col-12 col-md-6 col-lg-4 formatoValidar" ref={limpiarFormulario}>
           <div className ="col-6 col-md-6 formatoLabelInput">
             <label htmlFor="idProducto" className="form-label">Código:</label>
             <input type="text" className="form-control formatoInputCrear" id="idProducto" onChange = {(e) => setIdProducto(e.target.value)} required />

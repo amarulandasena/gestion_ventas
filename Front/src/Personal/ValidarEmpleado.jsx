@@ -1,14 +1,17 @@
 // Componente para validar la existencia de un empleado.
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import '../Formatos/ComponentesComunes.css';
 import '../Formatos/Validar.css';
 
-import { CrearEmpleado } from './crearEmpleado';
+import { CrearEmpleado } from './CrearEmpleado';
 
 
 export const ValidarEmpleado = () => {
+
+  // Variable para limpiar los campos del formulario.
+  const limpiarFormulario = useRef(null);
   
   // Hook para validar el cliente.
   const[numIdentificacion, setNumIdentificacion] = useState('');
@@ -39,6 +42,7 @@ export const ValidarEmpleado = () => {
     }  catch (err) {
       console.error("Error al validar cliente:", err);
     }
+    limpiarFormulario.current.reset();
 
   }
 
@@ -46,7 +50,7 @@ export const ValidarEmpleado = () => {
   return (
    <section className='container-fluid'>
       <article className="row">
-        <form className="col-12 col-md-6 col-lg-4 formatoValidar">
+        <form className="col-12 col-md-6 col-lg-4 formatoValidar" ref={limpiarFormulario}>
           <div className ="col-6 col-md-6 formatoLabelInput">
             <label htmlFor="numIdentificacion" className="form-label">Id:</label>
             <input type="text" className="form-control formatoInputCrear" id="numIdentificacion" onChange = {(e) => setNumIdentificacion(e.target.value)} required />
