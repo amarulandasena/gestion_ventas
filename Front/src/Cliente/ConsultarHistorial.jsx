@@ -1,4 +1,4 @@
-import { useState, useState } from "react"
+import { useState, useRef } from "react"
 
 import '../Formatos/Consultar.css';
 import '../Formatos/Validar.css';
@@ -52,7 +52,7 @@ export const ConsultarHistorial = () => {
   }
 
   return (
-    <section className='container-fluid'>
+    <section className='container-fluid piePagina'>
       <article className="row">
 
         <form className="row g-3 needs-validation" ref={limpiarFormulario}>

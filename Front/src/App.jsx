@@ -28,6 +28,8 @@ import { ActualizarProducto } from './Producto/ActualizarProducto';
 import { ConsultarProducto } from './Producto/ConsultarProducto';
 import { EliminarProducto } from './Producto/EliminarProducto';
 
+import { CrearPedido } from './AdministrarPedidos/CrearPedido';
+
 function App() {
 
   const [banderaBarra, setBanderaBarra] = useState(true);
@@ -77,6 +79,8 @@ function App() {
         <Route path='/modificarHistorial' element={<ActualizarHistorial />} />
 
         <Route path='/consultarHistorial' element={<ConsultarHistorial />} />
+
+        <Route path='/crearPedido' element={<CrearPedido />} />
       </Routes>
 
       <PieDePagina

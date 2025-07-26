@@ -7,9 +7,9 @@ import { ModificarValor } from './ModificarHistorial/ModificarValor';
 
 export const ActualizarHistorial = () => {
   return (
-    <div className='contenedorActualizaciones'>
+    <div className='contenedorActualizaciones '>
       <p> Ingrese los datos en el campo correspondiente </p>
-      <section className='container-fluid formatoActualizar'>
+      <section className='container-fluid formatoActualizar piePagina'>
         <ModificarNit />
         <ModificarHistorial />
         <ModificarValor />

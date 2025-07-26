@@ -18,6 +18,10 @@ p {
     font-size: 20px;
 }
 
+.piePagina {
+    margin-bottom: 95px;
+}
+
 @media screen and (max-width:425px) {
     .formatoActualizar {
         display: flex;

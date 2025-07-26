@@ -78,6 +78,7 @@ export const ConsultarCliente = () => {
       </article>
 
       <article className="row">
+         
          <div className="table-responsive ">
             <table className="table table-bordered border-primary table-hover formatoTabla">
               <thead>

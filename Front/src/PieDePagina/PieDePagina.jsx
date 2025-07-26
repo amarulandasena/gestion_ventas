@@ -2,7 +2,7 @@ import './PieDePagina.css';
 
 export const PieDePagina = ( { banderaPie }) => {
   return (
-    banderaPie ? <footer className = "container-fluid">
+    banderaPie ? <footer className = "container-fluid margenSuperior">
       <div className = "row pieDePagina">
         <p className = "col-12 col-md-6">Todos los derechos reservados<br />
                                           Sabaneta, Antioquia, 2025 <br />

@@ -62,6 +62,7 @@ export const CrearProducto = () => {
   return (
     <section className='container-fluid'>
       <article className='row formatoCrearCliente'>
+        <p>Ingrese la información del nuevo producto</p>
         <form className="row g-3 needs-validation" ref={limpiarFormulario}>
 
           <div className ="col-md-12 col-lg-4">
