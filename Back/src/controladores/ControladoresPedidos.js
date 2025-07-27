@@ -3,28 +3,6 @@
 const mysql2 = require('mysql2');
 const database = require('../config/database.js');
 
-const agregarProducto = (req, res) => {
-    const { idPedido, idProducto, nombreProducto, cantidad, precioUnitario } = req.body;
-
-    crearConsulta = `INSERT INTO productospedido(idPedido, idProducto, nombreProducto, cantidad, precioUnitario)
-                     VALUES (?, ?, ?, ?, ?);`;
-
-    const consulta = mysql2.format(crearConsulta, [idPedido, idProducto, nombreProducto, cantidad, precioUnitario]);
-
-    try {
-    database.query(consulta, (err, result) => {
-
-      if (err) {
-        res.status(400).json({ message : 'Producto no existe.' });
-      } else {
-        res.status(201).json({ message : 'Producto agregado correctamente.' });
-      } 
-    })
-    } catch (err) {
-    res.status(500).send(err.message);
-    }
-}
-
 
 const crearPedido = (req, res) => {
   const { nit, numIdentificacion, fechaPedido, direccionEnvio, formaPago, estado, fechaEntrega, comentarios } = req.body;
@@ -68,6 +46,5 @@ const crearPedido = (req, res) => {
 
 
 module.exports = {
-  agregarProducto,
   crearPedido
 }

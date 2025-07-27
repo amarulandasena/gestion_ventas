@@ -31,7 +31,7 @@ export const InfoPedido = () => {
     // Validamos que se ingresaron todos los datos.
     if(!nit || !numIdentificacion || !fechaPedido || !direccionEnvio || !formaPago || !estado || !fechaEntrega || !comentarios){
       alert('Ingrese todos los datos del pedido a registrar.');
-        return;
+      return;
     }
 
     // Creamos el objeto para el envío de los datos.
@@ -58,13 +58,12 @@ export const InfoPedido = () => {
       mensaje = data.message;
       codigo = data.id.idPedido;
         if(data.noCreado) {
-          console.log(data);
           alert(mensaje);
         } else {
-          console.log(data);
           alert(mensaje + ' con el código ' + codigo);
         }
     });
+    
     limpiarFormulario.current.reset();
   }
 
