@@ -43,19 +43,20 @@ export const InfoProductosPedido = () => {
   }
 
   // Creamos un arreglo con los datos del producto.
-  let arregloProducto = [idPedido, idProducto, nombreProducto, cantidad, precio];
+  let arregloProducto = [];
 
   // Función para generar la lista de pagos.
   const generarLista = (arreglo) => {
 
+    console.log(arreglo);
     const cuerpoTabla = document.getElementById('cuerpoTabla');
 
-    arreglo.forEach((producto) => {
+    arreglo.forEach(item => {
       const nuevaFila = document.createElement('tr');
-      nuevaFila.innerHTML = `<th scope="row">${producto.idProducto}</th>
-                              <td>${producto.nombreProducto}</td>
-                              <td>${producto.cantidad}</td>
-                              <td>${producto.precio}</td>`;
+      nuevaFila.innerHTML = `<th scope="row">${item.idProducto}</th>
+                              <td>${item.nombreProducto}</td>
+                              <td>${item.cantidad}</td>
+                              <td>${item.precioUnitario}</td>`;
       cuerpoTabla.appendChild(nuevaFila);
     })
 
@@ -75,10 +76,11 @@ export const InfoProductosPedido = () => {
         alert(mensaje);
       } else {
         alert(mensaje);
+        arregloProducto.push(datosProducto);
         generarLista(arregloProducto);
       }
   });
- 
+  
   limpiarFormulario.current.reset();
 
 }  

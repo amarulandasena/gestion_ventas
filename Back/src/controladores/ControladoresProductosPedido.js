@@ -4,8 +4,8 @@ const database = require('../config/database.js');
 const agregarProducto = (req, res) => {
     const { idPedido, idProducto, nombreProducto, cantidad, precioUnitario } = req.body;
 
-    crearConsulta = `INSERT INTO productospedido(idPedido, idProducto, nombreProducto, cantidad, precioUnitario)
-                     VALUES (?, ?, ?, ?, ?);`;
+    const crearConsulta = `INSERT INTO productospedido(idPedido, idProducto, nombreProducto, cantidad, precioUnitario)
+                           VALUES (?, ?, ?, ?, ?);`;
 
     const consulta = mysql2.format(crearConsulta, [idPedido, idProducto, nombreProducto, cantidad, precioUnitario]);
 
@@ -21,6 +21,11 @@ const agregarProducto = (req, res) => {
     } catch (err) {
     res.status(500).send(err.message);
     }
+}
+
+
+const eliminarProducto = (req, res) => {
+  
 }
 
 
