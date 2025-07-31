@@ -20,3 +20,25 @@ tr th {
 .piePagina {
     margin-bottom: 250px;
 }
+
+
+/* Formato botón para eliminar un producto del listado del pedido. */
+#miTabla {
+  width: 100%;
+  table-layout: fixed;
+}
+
+#miTabla th,
+#miTabla td {
+  width: 20%;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btnEliminar {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}

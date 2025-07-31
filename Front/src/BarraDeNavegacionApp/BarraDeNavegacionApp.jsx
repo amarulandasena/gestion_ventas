@@ -61,7 +61,7 @@ export const BarraDeNavegacionApp = ( { banderaBarra }) => {
                 </a>
                 <ul className="dropdown-menu">
                   <li><Link to="/crearPedido" className="dropdown-item formatoMenu">Crear pedido</Link></li>
-                  <li><Link to="/" className="dropdown-item formatoMenu">Modificar pedido</Link></li>
+                  <li><Link to="/modificarPedido" className="dropdown-item formatoMenu">Modificar pedido</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Consultar pedido</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Eliminar pedido</Link></li>
                 </ul>

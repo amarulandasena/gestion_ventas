@@ -76,7 +76,7 @@ export const ConsultarEmpleado = () => {
 
       <article className="row">
         <div className="table-responsive ">
-          <table className="table table-bordered border-primary table-hover formatoTabla">
+          <table className="table table-bordered border-primary table-hover formatoTabla" id='miTabla'>
             <thead>
               <tr className="table-primary">
                 <th scope="col"> Número de identificación </th>
@@ -96,7 +96,7 @@ export const ConsultarEmpleado = () => {
             </tbody>
           </table>
 
-          <table className="table table-bordered border-primary table-hover">
+          <table className="table table-bordered border-primary table-hover" id='miTabla'>
             <thead>
               <tr className="table-primary">
                 <th scope="col"> Dirección </th>
@@ -116,7 +116,7 @@ export const ConsultarEmpleado = () => {
             </tbody>
           </table>
 
-          <table className="table table-bordered border-primary table-hover">
+          <table className="table table-bordered border-primary table-hover" id='miTabla'>
             <thead>
               <tr className="table-primary">
                 <th scope="col"> Contacto </th>

@@ -23,6 +23,31 @@ export const InfoProductosPedido = () => {
   // Variable para almacenar el mensaje enviado por el servidor.
   let mensaje = '';
 
+  // Función para generar la lista de pagos.
+  const generarLista = (arreglo) => {
+
+    console.log(arreglo);
+    const cuerpoTabla = document.getElementById('cuerpoTabla');
+
+    arreglo.forEach(item => {
+      const nuevaFila = document.createElement('tr');
+      nuevaFila.innerHTML = `<th scope="row">${item.idProducto}</th>
+                              <td>${item.nombreProducto}</td>
+                              <td>${item.cantidad}</td>
+                              <td>${item.precioUnitario}</td>
+                              <td><button type="button" class="btn btn-link btnEliminar">Borrar</button></td>
+                              `;
+
+      // Agregamos el evento al botón justo después de insertar la fila
+      nuevaFila.querySelector('.btnEliminar').addEventListener('click', () => {
+      nuevaFila.remove();
+      });
+
+      cuerpoTabla.appendChild(nuevaFila);
+    })
+
+  }
+
   // Función para agregar un producto.
   const agregarProducto = async (e) => {
   e.preventDefault();
@@ -45,23 +70,6 @@ export const InfoProductosPedido = () => {
   // Creamos un arreglo con los datos del producto.
   let arregloProducto = [];
 
-  // Función para generar la lista de pagos.
-  const generarLista = (arreglo) => {
-
-    console.log(arreglo);
-    const cuerpoTabla = document.getElementById('cuerpoTabla');
-
-    arreglo.forEach(item => {
-      const nuevaFila = document.createElement('tr');
-      nuevaFila.innerHTML = `<th scope="row">${item.idProducto}</th>
-                              <td>${item.nombreProducto}</td>
-                              <td>${item.cantidad}</td>
-                              <td>${item.precioUnitario}</td>`;
-      cuerpoTabla.appendChild(nuevaFila);
-    })
-
-  }
-
   await fetch ('http://localhost:3001/productosPedido/', {
     method : 'POST',
     headers : {
@@ -83,8 +91,7 @@ export const InfoProductosPedido = () => {
   
   limpiarFormulario.current.reset();
 
-}  
-
+  }  
 
   return (
     <section className='container-fluid'>
@@ -127,13 +134,14 @@ export const InfoProductosPedido = () => {
       <article className="row">
         <div className="table-responsive ">
 
-          <table className="table table-bordered border-primary table-hover formatoTabla">
+          <table className="table table-bordered border-primary table-hover formatoTabla" id='miTabla'>
             <thead>
               <tr className="table-primary">
                 <th scope="col"> Código del producto </th>
                 <th scope="col"> Nombre del producto </th>  
                 <th scope="col"> Cantidad </th>
                 <th scope="col"> Precio </th>
+                <th scope="col"> Eliminar </th>
               </tr>
             </thead>
 

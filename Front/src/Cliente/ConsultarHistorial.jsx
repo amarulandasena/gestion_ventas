@@ -71,7 +71,7 @@ export const ConsultarHistorial = () => {
       <article className="row">
         <div className="table-responsive ">
 
-          <table className="table table-bordered border-primary table-hover formatoTabla">
+          <table className="table table-bordered border-primary table-hover formatoTabla" id='miTabla'>
             <thead>
               <tr className="table-primary">
                 <th scope="col"> Código del pago </th>

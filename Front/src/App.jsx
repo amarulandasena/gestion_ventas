@@ -29,6 +29,7 @@ import { ConsultarProducto } from './Producto/ConsultarProducto';
 import { EliminarProducto } from './Producto/EliminarProducto';
 
 import { CrearPedido } from './AdministrarPedidos/CrearPedido';
+import { ModificarPedido } from './AdministrarPedidos/ModificarPedido';
 
 function App() {
 
@@ -81,6 +82,8 @@ function App() {
         <Route path='/consultarHistorial' element={<ConsultarHistorial />} />
 
         <Route path='/crearPedido' element={<CrearPedido />} />
+
+        <Route path='/modificarPedido' element={<ModificarPedido />} />
       </Routes>
 
       <PieDePagina

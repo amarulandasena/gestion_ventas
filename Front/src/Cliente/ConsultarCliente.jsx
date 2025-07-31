@@ -80,7 +80,7 @@ export const ConsultarCliente = () => {
       <article className="row">
          
          <div className="table-responsive ">
-            <table className="table table-bordered border-primary table-hover formatoTabla">
+            <table className="table table-bordered border-primary table-hover formatoTabla" id='miTabla'>
               <thead>
                 <tr className="table-primary">
                   <th scope="col"> Nit </th>
@@ -102,7 +102,7 @@ export const ConsultarCliente = () => {
               </tbody>
             </table>
 
-            <table className="table table-bordered border-primary table-hover">
+            <table className="table table-bordered border-primary table-hover" id='miTabla'>
               <thead>
                 <tr className="table-primary">
                   <th scope="col"> Email </th>
@@ -124,7 +124,7 @@ export const ConsultarCliente = () => {
               </tbody>
             </table>
 
-            <table className="table table-bordered border-primary table-hover">
+            <table className="table table-bordered border-primary table-hover" id='miTabla'>
               <thead>
                 <tr className="table-primary">
                   <th scope="col"> Actividad </th>
