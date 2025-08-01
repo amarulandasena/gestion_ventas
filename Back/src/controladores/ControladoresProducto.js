@@ -42,7 +42,7 @@ const leerProducto = (req, res) => {
       if (result[0] !== undefined){
           res.status(200).json(result[0]);
         } else {
-          res.json({noEncontrado : true})
+          res.status(404).json({noEncontrado : true})
         }
       
     })

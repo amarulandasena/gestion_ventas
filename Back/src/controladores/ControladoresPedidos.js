@@ -72,7 +72,35 @@ const leerPedido = (req, res) => {
 
 }
 
+
+const leerPedidoCliente = (req, res) => {
+
+  const { nit } = req.params;
+
+  const leerConsulta = `SELECT idPedido, fechaPedido FROM pedido WHERE nit = ?;`;
+  const consulta = mysql2.format(leerConsulta, [nit]);
+
+  try {
+    database.query(consulta, (err, result) => {
+      
+      if (err) {
+        res.status(400).send(err);
+      } 
+      if (result.length > 0){
+          res.status(200).json(result);
+        } else {
+          console.log(result);
+          res.status(404).json({noEncontrado : true})
+        }
+      
+    })
+  } catch (err){
+    res.status(500).send(err.message);
+  }
+}
+
 module.exports = {
   crearPedido,
-  leerPedido
+  leerPedido,
+  leerPedidoCliente
 }

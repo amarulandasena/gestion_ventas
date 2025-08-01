@@ -31,6 +31,7 @@ import { EliminarProducto } from './Producto/EliminarProducto';
 import { CrearPedido } from './AdministrarPedidos/CrearPedido';
 import { ModificarPedido } from './AdministrarPedidos/ModificarPedido';
 import { ConsultarPedidos } from './AdministrarPedidos/ConsultarPedidos';
+import { ConsultarPedidosCliente } from './AdministrarPedidos/ConsultarPedidosCliente';
 
 function App() {
 
@@ -87,6 +88,8 @@ function App() {
         <Route path='/modificarPedido' element={<ModificarPedido />} />
 
         <Route path='/consultarPedidos' element={<ConsultarPedidos />} />
+
+        <Route path='/consultarPedidosCliente' element={<ConsultarPedidosCliente />} />
       </Routes>
 
       <PieDePagina
