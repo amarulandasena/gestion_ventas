@@ -45,6 +45,34 @@ const crearPedido = (req, res) => {
 }
 
 
+
+const leerPedido = (req, res) => {
+
+  const { idPedido } = req.params;
+
+  const leerConsulta = `SELECT * FROM pedido WHERE idPedido = ?;`;
+  const consulta = mysql2.format(leerConsulta, [idPedido]);
+
+  try {
+    database.query(consulta, (err, result) => {
+      
+      if (err) {
+        res.status(400).send(err);
+      } 
+      if (result[0] !== undefined){
+          res.status(200).json(result[0]);
+        } else {
+          res.json({noEncontrado : true})
+        }
+      
+    })
+  } catch (err){
+    res.status(500).send(err.message);
+  }
+
+}
+
 module.exports = {
-  crearPedido
+  crearPedido,
+  leerPedido
 }

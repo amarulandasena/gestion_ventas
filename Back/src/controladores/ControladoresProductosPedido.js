@@ -24,35 +24,33 @@ const agregarProducto = (req, res) => {
 }
 
 
-const eliminarProductoPedido = (req, res) => {
+const leerProductosPedido = (req, res) => {
 
-  const { idPedido, idProducto } = req.body;
+  const { idPedido } = req.params;
 
-  const eliminarConsulta = `DELETE FROM productospedido WHERE idPedido = ? AND idProducto = ?;`;
-
-  const consulta = mysql2.format(eliminarConsulta, [idPedido, idProducto]);
+  const leerConsulta = `SELECT * FROM productospedido WHERE idPedido = ?;`;
+  const consulta = mysql2.format(leerConsulta, [idPedido]);
 
   try {
     database.query(consulta, (err, result) => {
-
+      
       if (err) {
         res.status(400).send(err);
-      }
-
-      if (result.affectedRows == 1){
-        res.status(200).json({ message : 'Producto eliminado correctamente.'})
-      } else {
-        res.status(404).json({ message : 'Producto no registrado'})
-      }
+      } 
+      if (result.length !== 0){
+          res.status(200).json(result);
+        } else {
+          res.json({noEncontrado : true})
+        }
+      
     })
-  } catch (err) {
+  } catch (err){
     res.status(500).send(err.message);
   }
-  
 }
 
 
 module.exports = {
   agregarProducto,
-  eliminarProductoPedido
+  leerProductosPedido
 }

@@ -28,6 +28,8 @@ tr th {
   table-layout: fixed;
 }
 
+
+/* Distribuir de manera equitativa las columnas de la tabla */
 #miTabla th,
 #miTabla td {
   width: 20%;

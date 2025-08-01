@@ -33,7 +33,6 @@ const leerCliente = (req, res) => {
   const { nit } = req.params;
 
   const crearConsulta = `SELECT * FROM cliente WHERE nit = ?;`;
-
   const consulta = mysql2.format(crearConsulta, [nit]);
 
   try {
