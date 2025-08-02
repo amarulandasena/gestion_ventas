@@ -1,6 +1,6 @@
 const Router = require('express');
 
-const { agregarProducto , leerProductosPedido} = require('../controladores/ControladoresProductosPedido.js');
+const { agregarProducto , leerProductosPedido, eliminarProductosPedido} = require('../controladores/ControladoresProductosPedido.js');
 
 const router = Router();
 
@@ -9,5 +9,8 @@ router.post('/', agregarProducto);
 
 // Petición GET.
 router.get('/:idPedido', leerProductosPedido);
+
+// Petición DELETE.
+router.delete('/:idPedido', eliminarProductosPedido);
 
 module.exports = router;

@@ -99,8 +99,35 @@ const leerPedidoCliente = (req, res) => {
   }
 }
 
+
+const eliminarPedido = (req, res) => {
+
+  const { idPedido } = req.params;
+
+  const eliminarConsulta = `DELETE FROM pedido WHERE idPedido = ?;`;
+  const consulta = mysql2.format(eliminarConsulta, [idPedido]);
+
+  try {
+    database.query(consulta, (err, result) => {
+
+      if (err) {
+        res.status(400).send(err);
+      }
+
+      if (result.affectedRows == 1){
+        res.status(200).json({ message : 'Eliminando productos.'})
+      } else {
+        res.status(404).json({ message : 'Pedido no registrado'})
+      }
+    })
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+}
+
 module.exports = {
   crearPedido,
   leerPedido,
-  leerPedidoCliente
+  leerPedidoCliente,
+  eliminarPedido
 }

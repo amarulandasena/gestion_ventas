@@ -32,6 +32,7 @@ import { CrearPedido } from './AdministrarPedidos/CrearPedido';
 import { ModificarPedido } from './AdministrarPedidos/ModificarPedido';
 import { ConsultarPedidos } from './AdministrarPedidos/ConsultarPedidos';
 import { ConsultarPedidosCliente } from './AdministrarPedidos/ConsultarPedidosCliente';
+import { EliminarPedido } from './AdministrarPedidos/EliminarPedido';
 
 function App() {
 
@@ -90,6 +91,8 @@ function App() {
         <Route path='/consultarPedidos' element={<ConsultarPedidos />} />
 
         <Route path='/consultarPedidosCliente' element={<ConsultarPedidosCliente />} />
+
+        <Route path='/eliminarPedido' element={<EliminarPedido />} />
       </Routes>
 
       <PieDePagina

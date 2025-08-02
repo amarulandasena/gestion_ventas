@@ -18,7 +18,7 @@ export const EliminarCliente = () => {
   const eliminar = async (e) => {
     e.preventDefault();
 
-    const confirmacion = window.confirm(`¿Desea eliminar el cliente con número de ${nit}?`);
+    const confirmacion = window.confirm(`¿Desea eliminar el cliente con número de identificación ${nit}?`);
 
     if(confirmacion) {
       
