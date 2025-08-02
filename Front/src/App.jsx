@@ -34,6 +34,8 @@ import { ConsultarPedidos } from './AdministrarPedidos/ConsultarPedidos';
 import { ConsultarPedidosCliente } from './AdministrarPedidos/ConsultarPedidosCliente';
 import { EliminarPedido } from './AdministrarPedidos/EliminarPedido';
 
+import { RechazarPedido } from './GestionarPedidos/RechazarPedido';
+
 function App() {
 
   const [banderaBarra, setBanderaBarra] = useState(true);
@@ -93,6 +95,8 @@ function App() {
         <Route path='/consultarPedidosCliente' element={<ConsultarPedidosCliente />} />
 
         <Route path='/eliminarPedido' element={<EliminarPedido />} />
+
+        <Route path='/rechazarPedido' element={<RechazarPedido />} />
       </Routes>
 
       <PieDePagina

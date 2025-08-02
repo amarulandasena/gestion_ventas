@@ -1,0 +1,40 @@
+/* Formato a cada una de las actualizaciones */
+
+.formatoActualizarCliente {
+    background-color: #FFF;
+    border-radius: 5px;
+    color: #000;
+    font-family: 'Gill Sans', 'sans-serif';
+    font-size: 16px;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px 0px;
+}
+
+/* Formato para los input*/
+.formatoInput {
+    background-color: #60a7e7;
+    border: 1px solid #60a7e7;
+    min-height: 30px;
+    margin: 10px;
+}
+
+/* Formato para el botón */
+.formatoBoton {
+    height: 35px;
+    width: 90px;
+    color: #000;
+    font-family: Garamond;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.piePagina {
+    margin-bottom: 110px;
+}

@@ -146,7 +146,7 @@ const actualizarEstado = (req, res) => {
     const actualizarConsulta = `UPDATE pedido SET estado = ? WHERE idPedido = ?;`;
     const consulta = mysql2.format(actualizarConsulta, [estado, idPedido]);
 
-    try {
+  try {
     database.query(consulta, (err, result) => {
 
       if (err) {

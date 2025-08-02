@@ -125,9 +125,38 @@ const eliminarPedido = (req, res) => {
   }
 }
 
+
+const rechazarPedido = (req, res) => {
+
+  const { idPedido } = req.params;
+  const { estado } = req.body;
+
+  const rechazarConsulta = `UPDATE pedido SET estado = ? WHERE idPedido = ?;`;
+  const consulta = mysql2.format(rechazarConsulta, [estado, idPedido]);
+
+  try {
+    database.query(consulta, (err, result) => {
+
+      if (err) {
+         res.status(400).send(err);
+      }
+
+      if (result.affectedRows == 1){
+        res.status(200).json({ message : 'Pedido rechazado correctamente.'})
+      } else {
+        res.status(404).json({ message : 'Pedido no registrado'})
+      }
+    })
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+
+}
+
 module.exports = {
   crearPedido,
   leerPedido,
   leerPedidoCliente,
-  eliminarPedido
+  eliminarPedido,
+  rechazarPedido
 }

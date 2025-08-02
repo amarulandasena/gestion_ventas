@@ -77,7 +77,7 @@ export const BarraDeNavegacionApp = ( { banderaBarra }) => {
                   Gestionar pedidos
                 </a>
                 <ul className="dropdown-menu">
-                  <li><Link to="/" className="dropdown-item formatoMenu">Rechazar pedido</Link></li>
+                  <li><Link to="/rechazarPedido" className="dropdown-item formatoMenu">Rechazar pedido</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Reservar pedido</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Despachar pedido</Link></li>
                 </ul>

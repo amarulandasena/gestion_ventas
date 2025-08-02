@@ -1,6 +1,6 @@
 const Router = require('express');
 
-const { crearPedido, leerPedido, leerPedidoCliente, eliminarPedido } = require('../controladores/ControladoresPedidos.js');
+const { crearPedido, leerPedido, leerPedidoCliente, eliminarPedido, rechazarPedido } = require('../controladores/ControladoresPedidos.js');
 
 const router = Router();
 
@@ -15,5 +15,8 @@ router.get('/consultarPedidos/:nit', leerPedidoCliente);
 
 // Petición DELETE.
 router.delete('/:idPedido', eliminarPedido);
+
+// Petición PUT. 
+router.put('/:idPedido', rechazarPedido);
 
 module.exports = router;

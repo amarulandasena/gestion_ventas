@@ -1,36 +1,39 @@
-import { useState, useRef } from 'react';
+import { useState, useRef } from "react"
 
-import './FormatoActualizacionesClientePedido.css';
+import './GestionarPedidos.css';
 
-export const ActualizarEstado = () => {
+import '../Formatos/Consultar.css';
+import '../Formatos/Validar.css';
+import '../Formatos/ComponentesComunes.css';
+
+export const RechazarPedido = () => {
 
   // Variable para limpiar los campos del formulario.
   const limpiarFormulario = useRef(null);
 
-  // Hooks para validar los datos a actualizar.
   const[idPedido, setIdPedido] = useState(0);
   const[estado, setEstado] = useState('');
 
-  const modificar = async (e) => {
+  const rechazar = async (e) => {
     e.preventDefault();
 
-    // Validamos que se ingresaron toddos los datos.
-    if(!estado || !idPedido) {
-      alert('Ingrese el dato a modificar.');
+    // Validamos el ingreso de los datos.
+    if (!idPedido || !estado){
+      alert('Ingrese el código del pedido y/o el nuevo estado.');
       return;
     }
 
     // Instanciamos el objeto para enviar los datos.
-    let datosCliente = {
+    let datosPedido = {
       'estado' : estado
     }
 
-    await fetch(`http://localhost:3001/actualizarPedido/actualizarEstado/${idPedido}`, {
+    await fetch(`http://localhost:3001/pedido/${idPedido}`, {
       method : 'PUT',
       headers : { 
          'Content-type' : 'application/json',
       },
-      body : JSON.stringify(datosCliente),
+      body : JSON.stringify(datosPedido),
     })
     .then((response) => response.json())
     .then((data) => {
@@ -41,27 +44,25 @@ export const ActualizarEstado = () => {
   }
 
   return (
-    <article className='col-12 col-md-4'>
-      <form className="col-9 col-md-9 formatoActualizarCliente" ref={limpiarFormulario}>
-        <div className ="col-12 col-md-12">
+    <article className='container-fluid'>
+      <form className="col-12 col-md-12 col-lg-12 formatoActualizarCliente piePagina" ref={limpiarFormulario}>
+        <p>Ingrese la información del pedido a cancelar o rechazar.</p>
+
+        <div className ="col-12 col-md-4 col-lg-4">
           <label htmlFor="idPedido" className="form-label">Código del pedido: </label>
           <input type="number" className="form-control formatoInputCrear" id="idPedido" onChange = {(e) => setIdPedido(e.target.value)} required />
         </div>
 
-        <div className ="col-12 col-md-12">
+        <div className ="col-12 col-md-4 col-lg-4">
           <label htmlFor = "estado" className = "form-label">Estado:</label>
           <select className ="form-select formatoInputCrear" id="estado" onChange = {(e) => setEstado(e.target.value)} required>
             <option selected disabled value="">Seleccione el estado:</option>
-            <option>Creado</option>
             <option>Cancelado</option>
-            <option>Despachado</option>
-            <option>Reservado</option>
-            <option>Entregado</option>
           </select>
         </div>
 
-        <div className="col-12 col-md-12">
-          <button className="btn btn-primary formatoBoton" type="submit" onClick = {modificar}>Modificar</button>
+        <div className="col-12 col-md-4 col-lg-4">
+          <button className="btn btn-primary formatoBoton" type="submit" onClick = {rechazar}>Rechazar</button>
         </div>
       </form>
     </article>
