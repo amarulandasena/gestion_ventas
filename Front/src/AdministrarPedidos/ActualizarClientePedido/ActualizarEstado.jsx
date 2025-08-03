@@ -53,7 +53,6 @@ export const ActualizarEstado = () => {
           <select className ="form-select formatoInputCrear" id="estado" onChange = {(e) => setEstado(e.target.value)} required>
             <option selected disabled value="">Seleccione el estado:</option>
             <option>Creado</option>
-            <option>Cancelado</option>
             <option>Despachado</option>
             <option>Reservado</option>
             <option>Entregado</option>
