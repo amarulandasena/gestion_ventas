@@ -30,7 +30,7 @@ const crearPedido = (req, res) => {
         if (result[0] !== undefined){
           res.status(201).json({noCreado : false, message : 'Pedido creado correctamente', id : result[0]});
         } else {
-          res.json({noEncontrado : true})
+          res.status(404).json({noEncontrado : true})
         }
     
       })

@@ -75,12 +75,12 @@ export const BarraDeNavegacionApp = ( { banderaBarra }) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 formatoMenu">
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle formatoTituloMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Gestionar pedidos
+                  Gestionar reservas
                 </a>
                 <ul className="dropdown-menu">
                   <li><Link to="/crearReserva" className="dropdown-item formatoMenu">Reservar pedido</Link></li>
                   <li><Link to="/consultarReserva" className="dropdown-item formatoMenu">Consultar pedido reservado</Link></li>
-                  <li><Link to="/" className="dropdown-item formatoMenu">Eliminar pedido reservado</Link></li>
+                  <li><Link to="/eliminarReserva" className="dropdown-item formatoMenu">Eliminar pedido reservado</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Despachar pedido</Link></li>
                 </ul>
               </li>

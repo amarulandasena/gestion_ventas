@@ -65,9 +65,9 @@ const eliminarProductosPedido = (req, res) => {
       }
 
       if (result.affectedRows > 0){
-        res.status(200).json({ message : 'Pedido eliminado correctamente.'})
-      } else {
         res.status(404).json({ message : 'Valide la información del pedido.'})
+      } else {
+        res.status(200).json({ message : 'Pedido eliminado correctamente.'})
       }
     })
   } catch (err) {

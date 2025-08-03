@@ -121,9 +121,57 @@ const leerProductosReserva = (req, res) => {
 }
 
 
+const eliminarReserva = (req, res) => {
+  
+  const { idReserva } = req.params;
+
+  const eliminarConsulta = `DELETE FROM reserva WHERE idReserva = ?;`;
+  const consulta = mysql2.format(eliminarConsulta, [idReserva]);
+
+  try {
+    database.query(consulta, (err, result) => {
+
+      if (err) {
+        res.status(400).send(err);
+      }
+
+      if (result.affectedRows == 1){
+        const eliminarConsulta1 = `DELETE FROM productosreserva WHERE idReserva = ?;`;
+        const consulta1 = mysql2.format(eliminarConsulta1, [idReserva]);
+
+        try{
+          database.query(consulta1, (err, result) => {
+
+            if (err) {
+              res.status(400).send(err);
+            }
+
+            if (result.affectedRows > 0){
+              res.status(404).json({ message : 'Valide la información de la reserva.'})
+            } else {
+              res.status(200).json({ message : 'Reserva eliminada correctamente.'})
+            }
+          })
+        } catch(err) {
+          res.status(500).send(err.message);
+        } 
+      } else {
+        res.status(404).json({ message : 'Reserva no registrada'})
+      }
+    })
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+}
+
+
+
+
+
 module.exports = {
   crearReserva,
   agregarProductoReserva,
   leerReserva,
-  leerProductosReserva
+  leerProductosReserva,
+  eliminarReserva
 }
