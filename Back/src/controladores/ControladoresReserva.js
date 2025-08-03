@@ -165,7 +165,32 @@ const eliminarReserva = (req, res) => {
 }
 
 
+const despacharPedido = (req, res) => {
 
+  const { idProducto } = req.params;
+  const { cantidadPedido } = req.body;
+
+  const actualizarConsulta = `UPDATE producto SET existencias = existencias - ? WHERE idProducto = ? AND existencias >= ?;`;
+
+  const consulta = mysql2.format(actualizarConsulta, [cantidadPedido, idProducto, cantidadPedido]);
+
+  try {
+    database.query(consulta, (err, result) => {
+
+      if (err) {
+        res.status(400).send(err);
+      }
+
+      if (result.affectedRows == 1){
+        res.status(200).json({ message : 'Producto despachado correctamente.'})
+      } else {
+        res.status(404).json({ message : 'Existencias insuficientes.'})
+      }
+    })
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+}
 
 
 module.exports = {
@@ -173,5 +198,6 @@ module.exports = {
   agregarProductoReserva,
   leerReserva,
   leerProductosReserva,
-  eliminarReserva
+  eliminarReserva,
+  despacharPedido
 }

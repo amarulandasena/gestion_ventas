@@ -1,6 +1,6 @@
 const Router = require('express');
 
-const { crearReserva, agregarProductoReserva, leerReserva, leerProductosReserva, eliminarReserva, } = require('../controladores/ControladoresReserva.js');
+const { crearReserva, agregarProductoReserva, leerReserva, leerProductosReserva, eliminarReserva, despacharPedido } = require('../controladores/ControladoresReserva.js');
 
 const router = Router();
 
@@ -18,5 +18,8 @@ router.get('/productosReserva/:idReserva', leerProductosReserva);
 
 // Petición DELETE.
 router.delete('/:idReserva', eliminarReserva);
+
+// Petición PUT despachar pedido.
+router.put('/:idProducto', despacharPedido);
 
 module.exports = router;
