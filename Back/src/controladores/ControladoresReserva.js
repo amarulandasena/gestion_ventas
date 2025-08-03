@@ -67,7 +67,63 @@ const agregarProductoReserva = (req, res) => {
 }
 
 
+const leerReserva = (req, res) => {
+
+  const { idReserva } = req.params;
+
+  const leerConsulta = `SELECT * FROM reserva WHERE idReserva = ?;`;
+  const consulta = mysql2.format(leerConsulta, [idReserva]);
+
+  try {
+    database.query(consulta, (err, result) => {
+      
+      if (err) {
+        res.status(400).send(err);
+      } 
+      if (result[0] !== undefined){
+          res.status(200).json(result[0]);
+      } else {
+        res.status(404).json({noEncontrado : true})
+      }
+      
+    })
+  } catch (err){
+    res.status(500).send(err.message);
+  }
+}
+
+
+const leerProductosReserva = (req, res) => {
+
+  const { idReserva } = req.params;
+
+  const leerConsulta = `SELECT * FROM productosreserva WHERE idReserva = ?;`;
+  const consulta = mysql2.format(leerConsulta, [idReserva]);
+
+  try {
+    database.query(consulta, (err, result) => {
+      
+      if (err) {
+        res.status(400).send(err);
+      } 
+      if (result.length !== 0){
+          res.status(200).json(result);
+      } else {
+        res.status(404).json({noEncontrado : true})
+      }
+      
+    })
+  } catch (err){
+    res.status(500).send(err.message);
+  }
+
+
+}
+
+
 module.exports = {
   crearReserva,
-  agregarProductoReserva
+  agregarProductoReserva,
+  leerReserva,
+  leerProductosReserva
 }

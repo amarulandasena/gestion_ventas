@@ -4,29 +4,25 @@ import '../Formatos/Consultar.css';
 import '../Formatos/Validar.css';
 import '../Formatos/ComponentesComunes.css';
 
-export const ConsultarPedidos = () => {
+export const ConsultarReserva = () => {
 
   // Variable para limpiar los campos del formulario.
   const limpiarFormulario = useRef(null);
 
   // Hooks para capturar los datos.
-  const[idPedido, setIdPedido] = useState(0);
+  const[idReserva, setIdReserva] = useState(0);
   const[nit, setNit] = useState('');
   const[numIdentificacion, setNumIdentificacion] = useState('');
-  const[fechaPedido, setFechaPedido] = useState(null);
-  const[direccionEnvio, setDireccionEnvio] = useState('');
-  const[formaPago, setFormaPago] = useState('');
-  const[estado, setEstado] = useState('');
-  const[fechaEntrega, setFechaEntrega] = useState(null);
-  const[comentarios, setComentarios] = useState('');
+  const[fechaReserva, setFechaReserva] = useState(null);
+  const[fechaLimite, setFechaLimite] = useState(null);
 
-  // Función para consultar un pedido.
+  // Función para consultar una reserva.
   const consultar = async (e) => {
     e.preventDefault();
 
     // Validamos el ingreso de los datos.
-    if (!idPedido){
-      alert('Ingrese el código del pedido.');
+    if (!idReserva){
+      alert('Ingrese el código de la reserva.');
       return;
     }
 
@@ -38,59 +34,50 @@ export const ConsultarPedidos = () => {
       data.forEach((producto) => {
         const nuevaFila = document.createElement('tr');
         nuevaFila.innerHTML = `<th scope="row">${producto.idProducto}</th>
-                               <td>${producto.nombreProducto}</td>
-                               <td>${producto.cantidad}</td>
-                               <td>${producto.precioUnitario}</td>`;
+                               <td>${producto.cantidad}</td>`;
         cuerpoTabla.appendChild(nuevaFila);
       })
 
     }
 
-    await fetch(`http://localhost:3001/pedido/${idPedido}`)
+    await fetch(`http://localhost:3001/reserva/${idReserva}`)
     .then((response) => response.json())
     .then((data) => {
       if(data.noEncontrado){
-        alert('Pedido no registrado');
+        alert('Reserva no registrada');
       } else {
         setNit(data.nit);
         setNumIdentificacion(data.numIdentificacion);
-        setFechaPedido(data.fechaPedido);
-        setDireccionEnvio(data.direccionEnvio);
-        setFormaPago(data.formaPago);
-        setEstado(data.estado);
-        setFechaEntrega(data.fechaEntrega);
-        setComentarios(data.comentarios)
+        setFechaReserva(data.fechaReserva);
+        setFechaLimite(data.fechaLimite)
       }
     })
 
-    await fetch(`http://localhost:3001/productosPedido/${idPedido}`)
+    await fetch(`http://localhost:3001/reserva/productosReserva/${idReserva}`)
     .then((response) => response.json())
     .then((data) => {
       if(data.noEncontrado) {
-        alert('Pedido no registra productos');
+        alert('Reserva no registra productos');
       } else {
         generarLista(data);
       }
     })
-
-    limpiarFormulario.current.reset();
+    
   }
 
-  
   return (
     <section className='container-fluid'>
       <article className="row">
         <form className="col-12 col-md-6 col-lg-4 formatoValidar" ref={limpiarFormulario}>
 
           <div className ="col-6 col-md-6 formatoLabelInput">
-            <label htmlFor="idPedido" className="form-label">Código del pedido:</label>
-            <input type="number" className="form-control formatoInputCrear" id="idPedido" onChange = {(e) => setIdPedido(e.target.value)} required></input>
+            <label htmlFor="idReserva" className="form-label">Código de la reserva:</label>
+            <input type="number" className="form-control formatoInputCrear" id="idReserva" onChange = {(e) => setIdReserva(e.target.value)} required></input>
           </div>
 
           <div className="col-6 col-md-6">
             <button className="btn btn-primary formatoBoton" type="submit" onClick = {consultar}>Consultar</button>
           </div>
-
         </form>
       </article>
 
@@ -101,8 +88,8 @@ export const ConsultarPedidos = () => {
               <tr className="table-primary">
                 <th scope="col"> Nit </th>
                 <th scope="col"> Número de identificación </th>
-                <th scope="col"> Fecha del pedido </th>
-                <th scope="col"> Dirección de envio </th>
+                <th scope="col"> Fecha de la reserva </th>
+                <th scope="col"> Fecha límite </th>
               </tr>
             </thead>
 
@@ -110,30 +97,10 @@ export const ConsultarPedidos = () => {
               <tr>
                 <th scope="row"> {nit} </th>
                 <th scope="col"> {numIdentificacion} </th>
-                <th scope="col"> {fechaPedido} </th>
-                <th scope="col"> {direccionEnvio} </th>
+                <th scope="col"> {fechaReserva} </th>
+                <th scope="col"> {fechaLimite} </th>
               </tr>
             </tbody>
-          </table>
-
-          <table className="table table-bordered border-primary table-hover" id='miTabla'>
-             <thead>
-              <tr className="table-primary">
-                <th scope="col"> Forma de pago </th>
-                <th scope="col"> Estado </th>
-                <th scope="col"> Fecha de entrega </th>
-                <th scope="col"> Comentarios </th>
-              </tr>
-             </thead>
-
-             <tbody>
-              <tr>
-                <th scope="row"> {formaPago} </th>
-                <th scope="col"> {estado} </th>
-                <th scope="col"> {fechaEntrega} </th>
-                <th scope="col"> {comentarios} </th>
-              </tr>
-             </tbody>
           </table>
         </div>
       </article>
@@ -144,15 +111,13 @@ export const ConsultarPedidos = () => {
             <thead>
               <tr className="table-primary">
                 <th scope="col"> Código del producto </th>
-                <th scope="col"> Nombre del producto </th>  
-                <th scope="col"> Cantidad </th>
-                <th scope="col"> Precio </th>
+                <th scope="col"> Cantidad </th> 
               </tr>
             </thead>
 
-            <tbody id = "cuerpoTabla">
-              
-            </tbody>
+             <tbody id = "cuerpoTabla">
+
+             </tbody>
           </table>
         </div>
       </article>

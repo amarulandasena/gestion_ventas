@@ -40,7 +40,7 @@ const leerProductosPedido = (req, res) => {
       if (result.length !== 0){
           res.status(200).json(result);
         } else {
-          res.json({noEncontrado : true})
+          res.status(404).json({noEncontrado : true})
         }
       
     })

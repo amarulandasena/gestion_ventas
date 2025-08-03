@@ -36,6 +36,7 @@ import { EliminarPedido } from './AdministrarPedidos/EliminarPedido';
 import { RechazarPedido } from './GestionarPedidos/RechazarPedido';
 
 import { CrearReserva } from './GestionarPedidos/CrearReserva';
+import { ConsultarReserva } from './GestionarPedidos/ConsultarReserva';
 
 function App() {
 
@@ -100,6 +101,8 @@ function App() {
         <Route path='/rechazarPedido' element={<RechazarPedido />} />
 
         <Route path='/crearReserva' element={<CrearReserva />} />
+
+        <Route path='/consultarReserva' element={<ConsultarReserva />} />
       </Routes>
 
       <PieDePagina
