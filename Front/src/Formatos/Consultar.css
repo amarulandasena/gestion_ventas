@@ -19,6 +19,16 @@ tr th {
 
 .piePagina {
     margin-bottom: 250px;
+    padding-bottom: 150px;
+}
+
+.piePagina1 {
+    margin-bottom: 150px;
+}
+
+.piePagina2 {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 

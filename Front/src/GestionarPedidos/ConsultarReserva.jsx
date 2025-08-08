@@ -66,7 +66,7 @@ export const ConsultarReserva = () => {
   }
 
   return (
-    <section className='container-fluid'>
+    <section className='container-fluid piePagina1'>
       <article className="row">
         <form className="col-12 col-md-6 col-lg-4 formatoValidar" ref={limpiarFormulario}>
 
