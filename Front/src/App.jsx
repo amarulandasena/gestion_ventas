@@ -40,6 +40,9 @@ import { ConsultarReserva } from './GestionarPedidos/ConsultarReserva';
 import { EliminarReserva } from './GestionarPedidos/EliminarReserva';
 import { DespacharPedido } from './GestionarPedidos/DespacharPedido';
 
+import { ConsultarPrecioCod } from './Comerciales/ConsultarPrecioCod';
+import { ConsultarPrecioNom } from './Comerciales/ConsultarPrecioNom';
+
 function App() {
 
   const [banderaBarra, setBanderaBarra] = useState(true);
@@ -109,6 +112,10 @@ function App() {
         <Route path='/eliminarReserva' element={<EliminarReserva />} />
 
         <Route path='/despacharPedido' element={<DespacharPedido />} />
+
+        <Route path='/consultarPrecioCodigo' element={<ConsultarPrecioCod />} />
+
+        <Route path='/consultarPrecioNombre' element={<ConsultarPrecioNom />} />
       </Routes>
 
       <PieDePagina

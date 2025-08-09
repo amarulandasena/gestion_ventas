@@ -94,7 +94,8 @@ export const BarraDeNavegacionApp = ( { banderaBarra }) => {
                   Comerciales
                 </a>
                 <ul className="dropdown-menu">
-                  <li><Link to="/" className="dropdown-item formatoMenu">Consultar precios</Link></li>
+                  <li><Link to="/consultarPrecioCodigo" className="dropdown-item formatoMenu">Consultar precio por código</Link></li>
+                  <li><Link to="/consultarPrecioNombre" className="dropdown-item formatoMenu">Consultar precio por nombre</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Administrar descuentos</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Administrar promociones</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Elaborar cotizaciones</Link></li>

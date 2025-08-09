@@ -62,7 +62,7 @@ const leerPedido = (req, res) => {
       if (result[0] !== undefined){
           res.status(200).json(result[0]);
         } else {
-          res.json({noEncontrado : true})
+          res.json({noEncontrado : true});
         }
       
     })
@@ -89,7 +89,6 @@ const leerPedidoCliente = (req, res) => {
       if (result.length > 0){
           res.status(200).json(result);
         } else {
-          console.log(result);
           res.status(404).json({noEncontrado : true})
         }
       

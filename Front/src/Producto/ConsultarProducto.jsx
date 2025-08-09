@@ -20,7 +20,7 @@ export const ConsultarProducto = () => {
   const[imagen, setImagen] = useState(null);
   const[descuento, setDescuento] = useState(null);
 
-  // Función para consultar un empleado.
+  // Función para consultar un producto.
   const consultar = async (e) => { 
     e.preventDefault();
 

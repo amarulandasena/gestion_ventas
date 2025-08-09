@@ -23,14 +23,13 @@ tr th {
 }
 
 .piePagina1 {
-    margin-bottom: 150px;
+    margin-bottom: 170px;
 }
 
 .piePagina2 {
     margin-bottom: 50px;
     padding-bottom: 50px;
 }
-
 
 /* Formato botón para eliminar un producto del listado del pedido. */
 #miTabla {

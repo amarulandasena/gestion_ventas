@@ -18,6 +18,7 @@ const rutaProductosPedido = require('../rutas/RutasProductosPedido.js');
 const rutaActualizarClientePedido = require('../rutas/RutasActualizarClientePedido.js');
 const rutaActualizarProductoPedido = require('../rutas/RutasActualizarProductoPedido.js');
 const rutaReservas = require('../rutas/RutasReserva.js');
+const rutaPrecios = require('../rutas/RutasPrecios.js');
 
 // Instanciamos el servidor.
 const app = express();
@@ -46,6 +47,7 @@ app.use('/productosPedido', rutaProductosPedido);
 app.use('/actualizarPedido', rutaActualizarClientePedido);
 app.use('/actualizarProductoPedido', rutaActualizarProductoPedido);
 app.use('/reserva', rutaReservas);
+app.use('/precios', rutaPrecios);
 
 // Exportamos la app.
 module.exports = app;
