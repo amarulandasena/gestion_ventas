@@ -165,11 +165,39 @@ const actualizarReferencia = (req, res) => {
 }
 
 
+const actualizarDescuento = (req, res) => {
+
+    const { idProducto } = req.params;
+    const { descuento } = req.body;
+
+    const actualizarConsulta = `UPDATE producto SET descuento = ? WHERE idProducto = ?;`;
+    const consulta = mysql2.format(actualizarConsulta, [descuento, idProducto]);
+
+    try {
+    database.query(consulta, (err, result) => {
+
+      if (err) {
+         res.status(400).send(err);
+      }
+
+      if (result.affectedRows == 1){
+        res.status(200).json({ message : 'Descuento actualizado correctamente.'})
+      } else {
+        res.status(404).json({ message : 'Producto no registrado'})
+      }
+    })
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+}
+
+
 module.exports = {
     actualizarNombre,
     actualizarDescripcion,
     actualizarPrecio,
     actualizarExistencias,
     actualizarCategoria,
-    actualizarReferencia
+    actualizarReferencia,
+    actualizarDescuento
 }

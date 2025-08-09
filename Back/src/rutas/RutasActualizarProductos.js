@@ -1,7 +1,7 @@
 const Router = require('express');
 
 const { actualizarNombre, actualizarDescripcion, actualizarPrecio, actualizarExistencias, actualizarCategoria,
-        actualizarReferencia} = require('../controladores/ControladoresActualizarProducto');
+        actualizarReferencia, actualizarDescuento} = require('../controladores/ControladoresActualizarProducto');
 
 const router = Router();
 
@@ -22,6 +22,9 @@ router.put('/actualizarCategoria/:idProducto', actualizarCategoria);
 
 // Petición PUT referencia.
 router.put('/actualizarReferencia/:idProducto', actualizarReferencia);
+
+// Petición PUT descuento.
+router.put('/actualizarDescuento/:idProducto', actualizarDescuento);
 
 module.exports = router;
 

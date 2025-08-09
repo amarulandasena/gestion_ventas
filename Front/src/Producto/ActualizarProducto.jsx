@@ -8,6 +8,7 @@ import { ActualizarExistencias } from './ActualizarProducto/ActualizarExistencia
 import { ActualizarNombre } from './ActualizarProducto/ActualizarNombre';
 import { ActualizarPrecio } from './ActualizarProducto/ActualizarPrecio';
 import { ActualizarReferencia } from './ActualizarProducto/ActualizarReferencia';
+import { ActualizarDescuento } from './ActualizarProducto/ActualizarDescuento';
 
 export const ActualizarProducto = () => {
 
@@ -24,6 +25,9 @@ export const ActualizarProducto = () => {
         <ActualizarCategoria />
         <ActualizarExistencias />
         <ActualizarDescripcion />
+      </section>
+      <section className='container-fluid formatoActualizar'>
+        <ActualizarDescuento />
       </section>
     </div>
    

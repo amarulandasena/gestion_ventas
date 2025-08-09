@@ -2,32 +2,31 @@ import { useState, useRef } from 'react';
 
 import './FormatoActualizacionesProducto.css';
 
-export const ActualizarReferencia = () => {
+export const ActualizarDescuento = () => {
 
   // Variable para limpiar los campos del formulario.
   const limpiarFormulario = useRef(null);
 
   // Hooks para validar los datos a actualizar.
   const[idProducto, setIdProducto] = useState('');
-  const[referencia, setReferencia] = useState('');
+  const[descuento, setDescuento] = useState(0);
 
   // Función para modificar el dato.
-  const modificar = async (e) => { 
-
+  const modificar = async (e) => {
     e.preventDefault();
 
     // Validamos que se ingresaron todos los datos.
-    if(!idProducto || !referencia) {
+    if(!idProducto || !descuento) {
       alert('Ingrese el dato a modificar.');
       return;
     }
 
     // Instanciamos el objeto para enviar los datos.
     let datosProducto = {
-      'referencia' : referencia
+      'descuento' : descuento
     }
 
-    await fetch(`http://localhost:3001/actualizarProductos/actualizarReferencia/${idProducto}`, {
+    await fetch(`http://localhost:3001/actualizarProductos/actualizarDescuento/${idProducto}`, {
       method : 'PUT',
       headers : { 
          'Content-type' : 'application/json',
@@ -40,7 +39,7 @@ export const ActualizarReferencia = () => {
       limpiarFormulario.current.reset();
     })
   }
-  
+
   return (
     <article className='col-12 col-md-4'>
       <form className="col-9 col-md-9 formatoActualizarCliente" ref={limpiarFormulario}>
@@ -50,14 +49,8 @@ export const ActualizarReferencia = () => {
         </div>
 
         <div className ="col-12 col-md-12">
-          <label htmlFor = "referencia" className = "form-label">Referencia:</label>
-          <select className ="form-select formatoInputCrear" id="referencia" onChange = {(e) => setReferencia(e.target.value)} required>
-            <option selected disabled value="">Seleccione la referencia:</option>
-            <option>100ml</option>
-            <option>Referencia dos</option>
-            <option>Referencia tres</option>
-            <option>Referencia cuatro</option>
-          </select>
+          <label htmlFor="descuento" className="form-label">Descuento:</label>
+          <input type="number" className="form-control formatoInputCrear" id="descuento" onChange = {(e) => setDescuento(e.target.value)} required></input>
         </div>
 
         <div className="col-12 col-md-12">

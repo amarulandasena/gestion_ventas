@@ -96,11 +96,8 @@ export const BarraDeNavegacionApp = ( { banderaBarra }) => {
                 <ul className="dropdown-menu">
                   <li><Link to="/consultarPrecioCodigo" className="dropdown-item formatoMenu">Consultar precio por código</Link></li>
                   <li><Link to="/consultarPrecioNombre" className="dropdown-item formatoMenu">Consultar precio por nombre</Link></li>
-                  <li><Link to="/" className="dropdown-item formatoMenu">Administrar descuentos</Link></li>
+                  <li><Link to="/" className="dropdown-item formatoMenu">Consultar descuentos</Link></li>
                   <li><Link to="/" className="dropdown-item formatoMenu">Administrar promociones</Link></li>
-                  <li><Link to="/" className="dropdown-item formatoMenu">Elaborar cotizaciones</Link></li>
-                  <li><Link to="/" className="dropdown-item formatoMenu">Consultar cotizaciones</Link></li>
-                  <li><Link to="/" className="dropdown-item formatoMenu">eliminar cotizaciones</Link></li>
                 </ul>
               </li>
             </ul>
