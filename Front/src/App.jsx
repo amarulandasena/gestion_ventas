@@ -42,6 +42,7 @@ import { DespacharPedido } from './GestionarPedidos/DespacharPedido';
 
 import { ConsultarPrecioCod } from './Comerciales/ConsultarPrecioCod';
 import { ConsultarPrecioNom } from './Comerciales/ConsultarPrecioNom';
+import { ConsultarDescuentos } from './Comerciales/ConsultarDescuentos';
 
 function App() {
 
@@ -116,6 +117,8 @@ function App() {
         <Route path='/consultarPrecioCodigo' element={<ConsultarPrecioCod />} />
 
         <Route path='/consultarPrecioNombre' element={<ConsultarPrecioNom />} />
+
+        <Route path='/consultarDescuentos' element={<ConsultarDescuentos />} />
       </Routes>
 
       <PieDePagina
