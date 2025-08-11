@@ -1,6 +1,6 @@
 const Router = require('express');
 
-const { leerDescuentos, leerPromocion, crearPromocion } = require('../controladores/ControladoresPromociones.js');
+const { leerDescuentos, leerPromocion, crearPromocion, eliminarPromocion } = require('../controladores/ControladoresPromociones.js');
 
 const router = Router();
 
@@ -12,5 +12,8 @@ router.get('/:codigo', leerPromocion);
 
 // Pertición POST.
 router.post('/', crearPromocion);
+
+// Petición DELETE.
+router.delete('/:codigo', eliminarPromocion);
 
 module.exports = router;

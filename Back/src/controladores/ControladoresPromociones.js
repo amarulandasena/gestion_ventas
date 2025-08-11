@@ -78,9 +78,36 @@ const crearPromocion = (req, res) => {
 }
 
 
+const eliminarPromocion = (req, res) => {
+
+  const { codigo } = req.params;
+
+  const eliminarConsulta = `DELETE FROM promocion WHERE codigo = ?;`;
+  const consulta = mysql2.format(eliminarConsulta, [codigo]);
+
+   try {
+    database.query(consulta, (err, result) => {
+
+      if (err) {
+        res.status(400).send(err);
+      }
+
+      if (result.affectedRows == 1){
+        res.status(200).json({ message : 'Promoción eliminada correctamente.'})
+      } else {
+        res.status(404).json({ message : 'Promoción no registrada'})
+      }
+    })
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+}
+
+
 module.exports = {
   leerDescuentos,
   leerPromocion,
-  crearPromocion
+  crearPromocion,
+  eliminarPromocion
 }
 
