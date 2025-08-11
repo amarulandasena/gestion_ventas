@@ -2,36 +2,36 @@ import { useState, useRef } from 'react';
 
 import './FormatoActualizaciones.css';
 
-export const ActualizarActividad = () => {
+export const ActualizarFechaInicio = () => {
 
   // Variable para limpiar los campos del formulario.
   const limpiarFormulario = useRef(null);
 
   // Hooks para validar los datos a actualizar.
-  const[nit, setNit] = useState('');
-  const[actividad, setActividad] = useState('');
+  const[codigo, setCodigo] = useState('');
+  const[fechaInicio, setFechaInicio] = useState(null);
 
   // Función para modificar el dato.
-  const modificar = async (e) => {
+  const modificar = async(e) => {
     e.preventDefault();
 
-    // Validamos que se ingresaron toddos los datos.
-    if(!nit || !actividad) {
+    // Validamos que se ingresaron todos los datos.
+    if(!codigo || !fechaInicio) {
       alert('Ingrese el dato a modificar.');
       return;
     }
 
     // Instanciamos el objeto para enviar los datos.
-    let datosCliente = {
-      'actividad' : actividad
+    let datosPromocion = {
+      'fechaInicio' : fechaInicio
     }
 
-    await fetch(`http://localhost:3001/actualizarClientes/actualizarActividad/${nit}`, {
+    await fetch(`http://localhost:3001/actualizarPromociones/actualizarFechaInicio/${codigo}`, {
       method : 'PUT',
       headers : { 
          'Content-type' : 'application/json',
       },
-      body : JSON.stringify(datosCliente),
+      body : JSON.stringify(datosPromocion),
     })
     .then((response) => response.json())
     .then((data) => {
@@ -44,19 +44,18 @@ export const ActualizarActividad = () => {
     <article className='col-12 col-md-4'>
       <form className="col-9 col-md-9 formatoActualizarCliente" ref={limpiarFormulario}>
         <div className ="col-12 col-md-12">
-          <label htmlFor="nit" className="form-label">Nit:</label>
-          <input type="text" className="form-control formatoInput" id="nit" onChange = {(e) => setNit(e.target.value)} required />
+          <label htmlFor="codigo" className="form-label">Código:</label>
+          <input type="text" className="form-control formatoInput" id="codigo" onChange = {(e) => setCodigo(e.target.value)} required />
         </div>
 
         <div className ="col-12 col-md-12">
-          <label htmlFor="actividad" className="form-label">Actividad:</label>
-          <input type="text" className="form-control formatoInput" id="actividad" onChange = {(e) => setActividad(e.target.value)} required></input>
+          <label htmlFor="fechaInicio" className="form-label">Fecha de inicio:</label>
+          <input type="date" className="form-control formatoInputCrear" id="fechaInicio" onChange = {(e) => setFechaInicio(e.target.value)} required />
         </div>
 
         <div className="col-12 col-md-12">
           <button className="btn btn-primary formatoBoton" type="submit" onClick = {modificar}>Modificar</button>
         </div>
-
       </form>
     </article>
   )

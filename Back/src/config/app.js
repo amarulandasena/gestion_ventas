@@ -20,6 +20,7 @@ const rutaActualizarProductoPedido = require('../rutas/RutasActualizarProductoPe
 const rutaReservas = require('../rutas/RutasReserva.js');
 const rutaPrecios = require('../rutas/RutasPrecios.js');
 const rutaPromociones = require('../rutas/RutasPromociones.js');
+const rutaActualizarPromocion = require('../rutas/RutasActualizarPromocion.js');
 
 // Instanciamos el servidor.
 const app = express();
@@ -50,6 +51,7 @@ app.use('/actualizarProductoPedido', rutaActualizarProductoPedido);
 app.use('/reserva', rutaReservas);
 app.use('/precios', rutaPrecios);
 app.use('/promociones', rutaPromociones);
+app.use('/actualizarPromociones', rutaActualizarPromocion);
 
 // Exportamos la app.
 module.exports = app;
