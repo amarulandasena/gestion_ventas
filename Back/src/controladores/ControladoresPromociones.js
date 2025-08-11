@@ -77,6 +77,7 @@ const crearPromocion = (req, res) => {
 
 }
 
+
 module.exports = {
   leerDescuentos,
   leerPromocion,

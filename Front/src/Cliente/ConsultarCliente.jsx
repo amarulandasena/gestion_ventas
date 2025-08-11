@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState, useRef } from "react";
 
 import '../Formatos/Consultar.css';
 import '../Formatos/Validar.css';

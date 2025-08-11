@@ -45,6 +45,7 @@ import { ConsultarPrecioNom } from './Comerciales/ConsultarPrecioNom';
 import { ConsultarDescuentos } from './Comerciales/ConsultarDescuentos';
 import { ValidarPromocion } from './Comerciales/ValidarPromocion';
 import { ActualizarPromocion } from './Comerciales/ActualizarPromocion';
+import { ConsultarPromocion } from './Comerciales/ConsultarPromocion';
 
 function App() {
 
@@ -125,6 +126,8 @@ function App() {
         <Route path='/crearPromocion' element={<ValidarPromocion />} />
 
         <Route path='/actualizarPromocion' element={<ActualizarPromocion />} />
+
+        <Route path='/consultarPromocion' element={<ConsultarPromocion />} />
       </Routes>
 
       <PieDePagina
