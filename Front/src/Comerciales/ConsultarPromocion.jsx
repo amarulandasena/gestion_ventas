@@ -80,7 +80,7 @@ export const ConsultarPromocion = () => {
             </tbody>
           </table>
           
-          <table className="table table-bordered border-primary table-hover formatoTabla" id='miTabla'>
+          <table className="table table-bordered border-primary table-hover formatoTabla piePagina" id='miTabla'>
             <thead>
               <tr className="table-primary">
                 <th scope="col"> Descuento </th>

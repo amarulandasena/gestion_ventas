@@ -53,10 +53,15 @@ export const ActualizarReferencia = () => {
           <label htmlFor = "referencia" className = "form-label">Referencia:</label>
           <select className ="form-select formatoInputCrear" id="referencia" onChange = {(e) => setReferencia(e.target.value)} required>
             <option selected disabled value="">Seleccione la referencia:</option>
+            <option>30ml</option>
+            <option>50ml</option>
             <option>100ml</option>
-            <option>Referencia dos</option>
-            <option>Referencia tres</option>
-            <option>Referencia cuatro</option>
+            <option>120ml</option>
+            <option>130ml</option>
+            <option>180ml</option>
+            <option>200ml</option>
+            <option>300ml</option>
+            <option>140gr</option>
           </select>
         </div>
 

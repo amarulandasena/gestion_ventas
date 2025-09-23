@@ -4,12 +4,12 @@ const mysql2 = require('mysql2');
 const database = require('../config/database.js');
 
 const crearEmpleado = (req, res) => {
-  const { numIdentificacion, nombres, apellidos, fechaNacimiento, direccion, numtelefonico, numcelular, email, contacto, numContacto,
-          cargo, fechaIngreso, status, contrasegna } = req.body;
+  const { numIdentificacion, nombres, apellidos, fechaNacimiento, direccion, numtelefonico, numcelular, email, contacto, 
+          numContacto, cargo, fechaIngreso, status, contrasegna } = req.body;
 
-  const crearConsulta = `INSERT INTO empleado(numIdentificacion, nombres, apellidos, fechaNacimiento, direccion, numtelefonico, numcelular,
-                          email, contacto, numContacto, cargo, fechaIngreso, status, contrasegna) 
-                          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
+  const crearConsulta = `INSERT INTO empleado(numIdentificacion, nombres, apellidos, fechaNacimiento, direccion, numtelefonico, 
+                         numcelular, email, contacto, numContacto, cargo, fechaIngreso, status, contrasegna) 
+                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
 
   const consulta = mysql2.format(crearConsulta, [numIdentificacion, nombres, apellidos, fechaNacimiento, direccion, numtelefonico,
                      numcelular, email, contacto, numContacto, cargo, fechaIngreso, status, contrasegna]);

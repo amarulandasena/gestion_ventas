@@ -90,6 +90,7 @@ export const CrearProducto = () => {
             <select className ="form-select formatoInputCrear" id="categoria" onChange = {(e) => setCategoria(e.target.value)} required>
               <option selected disabled value="">Seleccione la categoría:</option>
               <option>Agua tónica limpiadora</option>
+              <option>Cremas - mujer</option>
               <option>Colonia - niñas</option>              
               <option>Colonia - niños</option>
               <option>Desenredante - niñas</option>
@@ -106,9 +107,11 @@ export const CrearProducto = () => {
             <label htmlFor = "referencia" className = "form-label">Referencia:</label>
             <select className ="form-select formatoInputCrear" id="referencia" onChange = {(e) => setReferencia(e.target.value)} required>
               <option selected disabled value="">Seleccione la referencia:</option>
+              <option>30ml</option>
               <option>50ml</option>
               <option>100ml</option>
               <option>120ml</option>
+              <option>130ml</option>
               <option>180ml</option>
               <option>200ml</option>
               <option>300ml</option>

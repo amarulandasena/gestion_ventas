@@ -7,12 +7,13 @@ const crearCliente = (req, res) => {
   const { nit, razonSocial, ciudad, direccion, numTelefonico, email, administrador, telAdministrador, emailAdministrador, sector, 
           actividad, tamagno, numEmpleados, producto, periodoPago } = req.body;
 
-  const crearConsulta = `INSERT INTO cliente(nit, razonSocial, ciudad, direccion, numTelefonico, email, administrador, telAdministrador, 
-                         emailAdministrador, sector, actividad, tamagno, numEmpleados, producto, periodoPago)
+  const crearConsulta = `INSERT INTO cliente(nit, razonSocial, ciudad, direccion, numTelefonico, email, administrador, 
+                         telAdministrador, emailAdministrador, sector, actividad, tamagno, numEmpleados, producto, periodoPago)
                          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
 
-  const consulta = mysql2.format(crearConsulta, [nit, razonSocial, ciudad, direccion, numTelefonico, email, 
-                  administrador, telAdministrador, emailAdministrador, sector, actividad, tamagno, numEmpleados, producto, periodoPago]);
+  const consulta = mysql2.format(crearConsulta, [nit, razonSocial, ciudad, direccion, numTelefonico, email, administrador, 
+                                telAdministrador, emailAdministrador, sector, actividad, tamagno, numEmpleados, producto, 
+                                periodoPago]);
 
   try {
     database.query(consulta, (err, result) => {

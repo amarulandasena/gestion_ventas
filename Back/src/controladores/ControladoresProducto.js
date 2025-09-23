@@ -9,7 +9,8 @@ const crearProducto = (req, res) => {
     const crearConsulta = `INSERT INTO producto (idProducto, nombreProducto, descripcion, precio, existencias, categoria, 
                           referencia) VALUES (?, ?, ?, ?, ?, ?, ?);`;
 
-    const consulta = mysql2.format(crearConsulta, [idProducto, nombreProducto, descripcion, precio, existencias, categoria, referencia]);
+    const consulta = mysql2.format(crearConsulta, [idProducto, nombreProducto, descripcion, precio, existencias, categoria, 
+                                  referencia]);
 
     try {
     database.query(consulta, (err, result) => {

@@ -45,7 +45,7 @@ export const ConsultarDescuentos = () => {
     <section className='container-fluid piePagina1'>
       <article className="row">
         <form className="col-12 col-md-6 col-lg-4 formatoValidar" ref={limpiarFormulario}>
-
+          
           <div className="col-6 col-md-6">
             <button className="btn btn-primary formatoBoton" type="submit" onClick = {consultar}>Consultar</button>
           </div>

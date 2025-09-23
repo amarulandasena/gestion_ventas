@@ -7,10 +7,12 @@ const database = require('../config/database.js');
 const crearPedido = (req, res) => {
   const { nit, numIdentificacion, fechaPedido, direccionEnvio, formaPago, estado, fechaEntrega, comentarios } = req.body;
 
-  crearConsulta = `INSERT INTO pedido(nit, numIdentificacion, fechaPedido, direccionEnvio, formaPago, estado, fechaEntrega, comentarios)
+  crearConsulta = `INSERT INTO pedido(nit, numIdentificacion, fechaPedido, direccionEnvio, formaPago, estado, fechaEntrega, 
+                    comentarios)
                     VALUES(?, ?, ?, ?, ?, ?, ?, ?);`;
 
-  const consulta = mysql2.format(crearConsulta, [nit, numIdentificacion, fechaPedido, direccionEnvio, formaPago, estado, fechaEntrega, comentarios]);
+  const consulta = mysql2.format(crearConsulta, [nit, numIdentificacion, fechaPedido, direccionEnvio, formaPago, estado, 
+                                 fechaEntrega, comentarios]);
 
   try {
   database.query(consulta, (err, result) => {

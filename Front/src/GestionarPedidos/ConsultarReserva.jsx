@@ -62,6 +62,8 @@ export const ConsultarReserva = () => {
         generarLista(data);
       }
     })
+
+    limpiarFormulario.current.reset();
     
   }
 

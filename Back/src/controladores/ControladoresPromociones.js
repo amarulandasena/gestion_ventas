@@ -58,9 +58,10 @@ const crearPromocion = (req, res) => {
 
   const { codigo, numIdentificacion1, descripcion, descuento, fechaInicio, fechaFinal, tipoPromocion } = req.body;
 
-  const crearConsulta = `INSERT INTO promocion (codigo, numIdentificacion1, descripcion, descuento, fechaInicio, fechaFinal, tipoPromocion)
-                        VALUES (?, ?, ?, ?, ?, ?, ?);`;
-  const consulta = mysql2.format(crearConsulta, [codigo, numIdentificacion1, descripcion, descuento, fechaInicio, fechaFinal, tipoPromocion]);
+  const crearConsulta = `INSERT INTO promocion (codigo, numIdentificacion1, descripcion, descuento, fechaInicio, fechaFinal, 
+                        tipoPromocion) VALUES (?, ?, ?, ?, ?, ?, ?);`;
+  const consulta = mysql2.format(crearConsulta, [codigo, numIdentificacion1, descripcion, descuento, fechaInicio, fechaFinal, 
+                                 tipoPromocion]);
 
   try {
     database.query(consulta, (err, result) => {

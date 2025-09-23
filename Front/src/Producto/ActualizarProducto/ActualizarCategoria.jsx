@@ -54,10 +54,17 @@ export const ActualizarCategoria = () => {
           <label htmlFor = "categoria" className = "form-label">Categoría:</label>
           <select className ="form-select formatoInputCrear" id="categoria" onChange = {(e) => setCategoria(e.target.value)} required>
             <option selected disabled value="">Seleccione la categoría:</option>
-            <option>Perfumes- hombre</option>
-            <option>Categoría dos</option>
-            <option>Categoría tres</option>
-            <option>Categoría cuatro</option>
+            <option>Agua tónica limpiadora</option>
+            <option>Cremas - mujer</option>
+            <option>Colonia - niñas</option>              
+            <option>Colonia - niños</option>
+            <option>Desenredante - niñas</option>
+            <option>Gel - reductor</option>
+            <option>Perfumes - hombre</option>
+            <option>Perfumes - mujer</option>
+            <option>Shampoo - niños</option>
+            <option>Shampoo - niñas</option>
+            <option>Talco corporal - adultos</option> 
           </select>
         </div>
 
